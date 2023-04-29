@@ -80,7 +80,6 @@ public class Inventory : MonoBehaviour
                var inventoryItem= InvenotryItemMap.Find(ii => ii.TypeOfItem == _inventory[n]);
                var itemInstance = Instantiate(inventoryItem.Prefab, InvenotrySlots[n]);
                 InvenotryDisplayItems.Add(itemInstance);
-                //_inventory[n] = type;
             }
         }
     }
