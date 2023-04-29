@@ -123,6 +123,95 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &1002769333
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 155964370975631900, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_Size.x
+      value: 6.599467
+      objectReference: {fileID: 0}
+    - target: {fileID: 155964370975631900, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7083082
+      objectReference: {fileID: 0}
+    - target: {fileID: 155964370975631900, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_Size.z
+      value: 2.8594031
+      objectReference: {fileID: 0}
+    - target: {fileID: 155964370975631900, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_Center.x
+      value: 0.3907082
+      objectReference: {fileID: 0}
+    - target: {fileID: 155964370975631900, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_Center.y
+      value: 0.8541541
+      objectReference: {fileID: 0}
+    - target: {fileID: 155964370975631900, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_Center.z
+      value: -0.5294224
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.36472806
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.93111414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -137.218
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105546994957108589, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863062621779389598, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818280122236044224, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
+      propertyPath: m_Name
+      value: AmmoPickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10c0307e07d8b6348972f4b9b9cc7798, type: 3}
 --- !u!1 &1109795418
 GameObject:
   m_ObjectHideFlags: 0

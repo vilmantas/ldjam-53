@@ -186,8 +186,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108243403}
-  m_LocalRotation: {x: 0.27833953, y: 0.16116977, z: -0.047436927, w: 0.945675}
-  m_LocalPosition: {x: 2.88, y: 8.74, z: -19.76}
+  m_LocalRotation: {x: -0.043494973, y: 0.9478602, z: -0.27898267, w: -0.14777674}
+  m_LocalPosition: {x: 9.716546, y: 8.74, z: -3.9932852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -547,14 +547,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386227337}
-  m_LocalRotation: {x: 0.27833953, y: 0.16116977, z: -0.047436927, w: 0.945675}
-  m_LocalPosition: {x: 2.88, y: 8.74, z: -19.76}
+  m_LocalRotation: {x: -0.043494973, y: 0.9478602, z: -0.27898267, w: -0.14777674}
+  m_LocalPosition: {x: 9.716546, y: 8.74, z: -3.9932852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 32.801, y: 19.2, z: 0}
 --- !u!114 &1386227341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,23 +972,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1350547487675852534, guid: f6d19130093998643b53ea9547f46d49, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.79
+      value: -14.06
       objectReference: {fileID: 0}
     - target: {fileID: 1350547487675852534, guid: f6d19130093998643b53ea9547f46d49, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.014145317
       objectReference: {fileID: 0}
     - target: {fileID: 1350547487675852534, guid: f6d19130093998643b53ea9547f46d49, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1350547487675852534, guid: f6d19130093998643b53ea9547f46d49, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.9999
       objectReference: {fileID: 0}
     - target: {fileID: 1350547487675852534, guid: f6d19130093998643b53ea9547f46d49, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1350547487675852534, guid: f6d19130093998643b53ea9547f46d49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -996,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1350547487675852534, guid: f6d19130093998643b53ea9547f46d49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 178.379
       objectReference: {fileID: 0}
     - target: {fileID: 1350547487675852534, guid: f6d19130093998643b53ea9547f46d49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1034,7 +1034,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Truck
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6934703821593106019, guid: f6d19130093998643b53ea9547f46d49, type: 3}
+      propertyPath: m_Name
+      value: Invenotry
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3805023217255615718, guid: f6d19130093998643b53ea9547f46d49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
