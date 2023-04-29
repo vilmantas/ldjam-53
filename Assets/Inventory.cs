@@ -12,7 +12,8 @@ public class InventoryItem
 public class Inventory : MonoBehaviour
 {
 
-    ItemPickup.ItemType? _inRangeType;
+    ItemPickup.ItemType? _inRangePickupType;
+    ItemPickup.ItemType? _inRangeDropOffType;
     ItemType?[] _inventory = new ItemType?[4];
 
     public Transform[] InvenotrySlots = new Transform[4];
@@ -22,9 +23,15 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && _inRangeType is not null && HasEmptySlot())
+        if (Input.GetKeyDown(KeyCode.E) && _inRangePickupType is not null && HasEmptySlot())
         {
-            AddItem(_inRangeType.Value);
+            AddItem(_inRangePickupType.Value);
+            RefreshDisplay();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && _inRangeDropOffType is not null)
+        {
+            TryTakeItemOut(_inRangeDropOffType.Value);
             RefreshDisplay();
         }
     }
@@ -32,12 +39,26 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerEnter(Collider other)
     {
-        _inRangeType = other.GetComponent<ItemPickup>().GetItem();
+        var pickup = other.GetComponent<ItemPickup>();
+
+        if (pickup is not null) 
+        {
+            _inRangePickupType = other.GetComponent<ItemPickup>().GetItem();
+        }
+
+        var dropoff = other.GetComponent<ItemDropOff>();
+
+        if (dropoff is not null)
+        {
+            _inRangeDropOffType = dropoff.NeededItem;
+        }
+
     }
 
     public void OnTriggerExit(Collider other)
     {
-        _inRangeType = null;
+        _inRangePickupType = null;
+        _inRangeDropOffType = null;
     }
 
     // returns true when item is in invenotry and was taken out
