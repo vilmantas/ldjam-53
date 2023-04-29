@@ -137,8 +137,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5928492416533204437}
   serializedVersion: 4
-  m_Mass: 1200
-  m_Drag: 0.3
+  m_Mass: 1100
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -194,11 +194,11 @@ MonoBehaviour:
     rightWheel: {fileID: 2610415715411190290}
     motor: 1
     steering: 0
-  - leftWheel: {fileID: 1101731385824996082}
+  - leftWheel: {fileID: 7015676681156024260}
     rightWheel: {fileID: 7148428229124659517}
     motor: 1
     steering: 1
-  maxMotorTorque: 1200
+  maxMotorTorque: 800
   maxSteeringAngle: 20
 --- !u!1 &7612751333921367375
 GameObject:
@@ -231,7 +231,7 @@ Transform:
   - {fileID: 9209220908142109416}
   - {fileID: 8427503773306818426}
   - {fileID: 4090367170618251719}
-  - {fileID: 1101731385824996081}
+  - {fileID: 4227479383848032062}
   m_Father: {fileID: 1350547487675852534}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -433,12 +433,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6c4235d44a3f59498bb5af459d3502d, type: 3}
---- !u!4 &1101731385824996081 stripped
+--- !u!4 &4227479383848032062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3882424770627894734, guid: a6c4235d44a3f59498bb5af459d3502d, type: 3}
   m_PrefabInstance: {fileID: 1101731385824996080}
   m_PrefabAsset: {fileID: 0}
---- !u!146 &1101731385824996082 stripped
+--- !u!146 &7015676681156024260 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 7932688455076986164, guid: a6c4235d44a3f59498bb5af459d3502d, type: 3}
   m_PrefabInstance: {fileID: 1101731385824996080}
