@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Gereuses_Levelis.unity
+    guid: e142b1a9dee698f4fa81cfdb03c1402e
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: f0ec89df022728145afad9efe5696bd6
+  - enabled: 1
+    path: Assets/Scenes/Lighting.unity
+    guid: 5e30b3eff2b10f047a312566f77fdb40
+  - enabled: 1
+    path: Assets/Scenes/UI.unity
+    guid: fee51ffe498ab6641be47aa60b49aa0d
+  - enabled: 1
+    path: Assets/Features/LoadingScene/Loading.unity
+    guid: fc566fff996ae2e4c99376ad815954e7
   m_configObjects: {}

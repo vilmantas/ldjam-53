@@ -10,8 +10,6 @@ public class GameplayManager : MonoBehaviour
     
     private void Awake()
     {
-        print("Game is running!");
-
         Truck = GameObject.Find("Truck");
         
         CameraManager.Instance.ChangeTarget(Truck.gameObject.transform, Truck.gameObject.transform);
