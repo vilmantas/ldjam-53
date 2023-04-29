@@ -1,0 +1,7 @@
+.idea/
+BUILD/
+BUILD.zip
+obj/
+Logs/
+Temp/
+Library/
