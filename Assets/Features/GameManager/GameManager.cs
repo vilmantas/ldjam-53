@@ -28,12 +28,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Keypad0)) 
         {
-            StartGame(Configuration.Levels[0].LevelName);
+            StartGame(Configuration.Levels.Levels[0].LevelName);
         }
 
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            StartGame(Configuration.Levels[1].LevelName);
+            StartGame(Configuration.Levels.Levels[1].LevelName);
         }
     }
 }
