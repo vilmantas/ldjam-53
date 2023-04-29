@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -20,6 +21,10 @@ public class Inventory : MonoBehaviour
     public List<InventoryItem> InvenotryItemMap = new List<InventoryItem>();
     private List<GameObject> InvenotryDisplayItems = new List<GameObject>();
 
+    public Action<ItemType> OnPickupAvailable;
+    public Action<ItemType> OnDropOffAvailable;
+    public Action OnZoneLeft;
+    
 
     void Update()
     {
@@ -44,6 +49,8 @@ public class Inventory : MonoBehaviour
         if (pickup is not null) 
         {
             _inRangePickupType = other.GetComponent<ItemPickup>().GetItem();
+            
+            OnPickupAvailable.Invoke(_inRangePickupType.Value);
         }
 
         var dropoff = other.GetComponent<ItemDropOff>();
@@ -51,14 +58,17 @@ public class Inventory : MonoBehaviour
         if (dropoff is not null)
         {
             _inRangeDropOffType = dropoff.NeededItem;
+            
+            OnDropOffAvailable.Invoke(_inRangeDropOffType.Value);
         }
-
     }
 
     public void OnTriggerExit(Collider other)
     {
         _inRangePickupType = null;
         _inRangeDropOffType = null;
+
+        OnZoneLeft.Invoke();
     }
 
     // returns true when item is in invenotry and was taken out

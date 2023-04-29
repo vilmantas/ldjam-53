@@ -1,6 +1,7 @@
 using Features.LoadingScene;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,21 +20,25 @@ public class GameManager : MonoBehaviour
 
     public GameConfiguration_SO Configuration;
 
-    public void StartGame(string level)
+    public void StartGame(LevelConfiguration_SO config)
     {
-        LoadingManager.Instance.LoadScenes(new List<string>() { level, "Gameplay", "Lighting" }, "Lighting");
+        var level = config.LevelName;
+
+        var additionalScenes = config.AdditionalScenes.Scenes;
+        
+        LoadingManager.Instance.LoadScenes(new List<string>() { level }.Concat(additionalScenes), "Lighting");
     }
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Keypad0)) 
         {
-            StartGame(Configuration.Levels.Levels[0].LevelName);
+            StartGame(Configuration.Levels.Levels[0]);
         }
 
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            StartGame(Configuration.Levels.Levels[1].LevelName);
+            StartGame(Configuration.Levels.Levels[1]);
         }
     }
 }
