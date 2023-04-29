@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c1079b7ef6333429026338caef35a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 91.700005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c1079b7ef6333429026338caef35a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -47.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c1079b7ef6333429026338caef35a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c1079b7ef6333429026338caef35a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
     - target: {fileID: 919132149155446097, guid: 15c1079b7ef6333429026338caef35a4, type: 3}
       propertyPath: m_Name
-      value: Cube
+      value: Truck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
