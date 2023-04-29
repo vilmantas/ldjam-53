@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        LoadingManager.Instance.LoadScenes(new List<string>() { "Gereuses_Levelis", "Gameplay", "Lighting" }, "Lighting");
+        LoadingManager.Instance.LoadScenes(new List<string>() { "Level_0", "Gameplay", "Lighting" }, "Lighting");
     }
 
     public void Update()
