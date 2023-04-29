@@ -199,8 +199,9 @@ MonoBehaviour:
     rightWheel: {fileID: 7148428229124659517}
     motor: 1
     steering: 1
-  maxMotorTorque: 800
-  maxSteeringAngle: 20
+  maxMotorTorque: 500
+  maxSteeringAngle: 30
+  boost: 10
 --- !u!1 &6736864209010007897
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +311,6 @@ MonoBehaviour:
   InvenotryItemMap:
   - TypeOfItem: 0
     Prefab: {fileID: 3827843180607015401, guid: 3185a056000d7de4b9bfdef88a72c07e, type: 3}
-  AmmoPrefab: {fileID: 0}
 --- !u!1 &7612751333921367375
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class Driving : MonoBehaviour
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
-
+    public float boost = 1;
     // finds the corresponding visual wheel
     // correctly applies the transform
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
@@ -31,6 +31,9 @@ public class Driving : MonoBehaviour
     {
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+
+        GetComponent<Rigidbody>().AddForce(transform.forward * boost* Mathf.Max(motor, 0));
+        GetComponent<Rigidbody>().AddForce(transform.up *-1 * boost * Mathf.Max(motor, 0));
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
