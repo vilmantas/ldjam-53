@@ -17,15 +17,19 @@ public class LevelConfiguration : MonoBehaviour
     
     [SerializeField]
     private LevelConfiguration_SO Configuration;
+
+    [HideInInspector]
+    public int RespawnsAllowed;
     
     [HideInInspector]
     public Dictionary<ItemPickup.ItemType, ItemLoadDurations> ItemDurations;
 
-    private void Start()
+    private void Awake()
     {
         LevelName = Configuration.LevelName;
         TimeToSurviveMinutes = Configuration.TimeToSurviveMinutes;
         LoseGracePeriod = Configuration.LoseGracePeriod;
         ItemDurations = Configuration.ItemDurations.ToDictionary(x => x.ItemType, x => x);
+        RespawnsAllowed = Configuration.RespawnsAllowed;
     }
 }

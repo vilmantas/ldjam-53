@@ -8,6 +8,8 @@ public class LevelConfiguration_SO : ScriptableObject
 {
     public string LevelName;
 
+    public int RespawnsAllowed;
+    
     [Min(0.1f)]
     public float TimeToSurviveMinutes;
     
