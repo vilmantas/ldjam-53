@@ -104,6 +104,8 @@ public class GameplayManager : MonoBehaviour
 
     public void CheckIfGameOver()
     {
+        if (LevelConfiguration == null) return;
+        
         var g = TimePassed - GracePeriodStart > LevelConfiguration.LoseGracePeriod;
         
         if (g) GameOver();
