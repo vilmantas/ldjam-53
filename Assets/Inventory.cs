@@ -32,6 +32,9 @@ public class Inventory : MonoBehaviour
 
     public Action OnActionAttempt;
 
+    public Action<float> OnStartAction;
+    public Action OnStopAction;
+
 
     void Update()
     {
@@ -78,9 +81,13 @@ public class Inventory : MonoBehaviour
 
     public IEnumerator DelayedAction(float delay, Action action)
     {
+        OnStartAction.Invoke(delay);
+        
         yield return new WaitForSeconds(delay);
         
         action.Invoke();
+        
+        OnStopAction.Invoke();
     }
 
     // Update is called once per frame
