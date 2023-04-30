@@ -8,7 +8,8 @@ public class ItemPickup : MonoBehaviour
     {
         None,
         Ammo,
-        Health
+        Health,
+        Shell
     }
     public ItemType PickupType;
 
