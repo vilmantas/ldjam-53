@@ -35,6 +35,8 @@ public class Inventory : MonoBehaviour
     public Action<float> OnStartAction;
     public Action OnStopAction;
 
+    public bool DoingAction;
+
 
     void Update()
     {
@@ -81,11 +83,17 @@ public class Inventory : MonoBehaviour
 
     public IEnumerator DelayedAction(float delay, Action action)
     {
+        if (DoingAction) yield break;
+
+        DoingAction = true;
+        
         OnStartAction.Invoke(delay);
         
         yield return new WaitForSeconds(delay);
         
         action.Invoke();
+        
+        DoingAction = false;
         
         OnStopAction.Invoke();
     }
