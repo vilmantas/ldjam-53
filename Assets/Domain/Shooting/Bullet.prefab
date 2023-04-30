@@ -159,7 +159,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: defbf77ca3fc47f43a83c01527218e80, type: 3}
+  - {fileID: 2100000, guid: 51d41b2c2f8a84947ac45e66bfb1ba44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -323,7 +323,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1edcc6f8c98385448a61e03488cc8f91, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 210f5203080106b4d83019632d4d0391, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 2.09

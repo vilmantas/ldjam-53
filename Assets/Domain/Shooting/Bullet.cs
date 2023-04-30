@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
     {
         if (Random.Range(0,100)<= AudioFrequency)
         {
-            //audio.Play();
+            audio.Play();
         }
     }
 }

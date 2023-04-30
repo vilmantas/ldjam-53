@@ -16,7 +16,7 @@ public class Firing : MonoBehaviour
 
     void Start()
     {
-        //audio = GetComponent<AudioSource>();
+        audio = GetComponent<AudioSource>();
     }
     private void OnEnable()
     {
@@ -25,7 +25,7 @@ public class Firing : MonoBehaviour
 
     void FireMagazine()
     {
-        //audio.Play();
+        audio.Play();
         for (int n = 0; n< magazineSize; n++)
         {
             Invoke("Fire", n* gunSpeed);
@@ -49,6 +49,6 @@ public class Firing : MonoBehaviour
     }
     void stopSound()
     {
-        //audio.Stop();
+        audio.Stop();
     }
 }
