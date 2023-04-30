@@ -15,4 +15,8 @@ MonoBehaviour:
   LevelName: Level_0
   TimeToSurviveMinutes: 1
   LoseGracePeriod: 8.59
+  ItemDurations:
+  - ItemType: 1
+    LoadDuration: 3
+    OffloadDuration: 5
   AdditionalScenes: {fileID: 11400000, guid: 340ebd4227f251f4a8bb05db7c5459df, type: 2}

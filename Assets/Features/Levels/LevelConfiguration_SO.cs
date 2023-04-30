@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,21 @@ public class LevelConfiguration_SO : ScriptableObject
     
     [Min(0f)]
     public float LoseGracePeriod;
+
+    public List<ItemLoadDurations> ItemDurations;
     
     public SceneList_SO AdditionalScenes;
+}
+
+
+[Serializable]
+public class ItemLoadDurations
+{
+    public ItemPickup.ItemType ItemType;
+
+    [Min(0.1f)]
+    public float LoadDuration;
+
+    [Min(0.1f)]
+    public float OffloadDuration;
 }

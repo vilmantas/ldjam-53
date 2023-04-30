@@ -39,6 +39,6 @@ public class PickupDisplayController : MonoBehaviour
     private void OnPickupAvailable()
     {
         PickUpText.enabled = true;
-        PickUpText.text = $"PRESS E TO PICK UP {p_GameplayManager.PickUpAvailable}";
+        PickUpText.text = $"PRESS E TO PICK UP {p_GameplayManager.ActivePickup.GetItem()}";
     }
 }
