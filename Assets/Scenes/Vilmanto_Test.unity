@@ -246,11 +246,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6017959147801193161, guid: d159bfc0207cc774f968e345c11af18b, type: 3}
+      propertyPath: PickupType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7674462834092378355, guid: d159bfc0207cc774f968e345c11af18b, type: 3}
       propertyPath: m_Name
       value: AmmoPickup
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 163454679525210460, guid: d159bfc0207cc774f968e345c11af18b, type: 3}
+    - {fileID: 6017959147801193161, guid: d159bfc0207cc774f968e345c11af18b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -271,6 +277,22 @@ PrefabInstance:
     - target: {fileID: 4445728845325343545, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
       propertyPath: m_Name
       value: ItemDropOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415220770488019970, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
+      propertyPath: Max
+      value: 4481
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415220770488019970, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
+      propertyPath: Name
+      value: Test Bunker
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415220770488019970, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
+      propertyPath: Available
+      value: 2532
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415220770488019970, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
+      propertyPath: NeededItem
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9092924987738348458, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
       propertyPath: m_RootOrder
@@ -799,6 +821,10 @@ PrefabInstance:
     - target: {fileID: 5928492416533204437, guid: f6d19130093998643b53ea9547f46d49, type: 3}
       propertyPath: m_Name
       value: Truck
+      objectReference: {fileID: 0}
+    - target: {fileID: 7886904601747580526, guid: f6d19130093998643b53ea9547f46d49, type: 3}
+      propertyPath: InvenotryItemMap.Array.data[0].TypeOfItem
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

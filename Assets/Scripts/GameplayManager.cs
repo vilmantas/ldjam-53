@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Features.Camera;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class GameplayManager : MonoBehaviour
     public Action OnPickupAvailable;
 
     public Action OnLeavingZone;
+
+    public List<ItemDropOff> ActiveZones;
     
     void Awake()
     {
@@ -29,6 +32,8 @@ public class GameplayManager : MonoBehaviour
         inv.OnZoneLeft += LeavingTriggerZone;
         
         CameraManager.Instance.ChangeTarget(Truck.gameObject.transform, Truck.gameObject.transform);
+
+        ActiveZones = FindObjectsOfType<ItemDropOff>().ToList();
     }
 
     public void SetPickup(ItemPickup.ItemType type)
