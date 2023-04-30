@@ -73,14 +73,24 @@ public class GameplayManager : MonoBehaviour
         if (ActivePickup)
         {
             var item = ActivePickup.GetItem();
+
+            var duration = 2f;
+
+            if (LevelConfiguration.ItemDurations.ContainsKey(item))
+                duration = LevelConfiguration.ItemDurations[item].LoadDuration;
             
-            inv.DoPickup(item, LevelConfiguration.ItemDurations[item].LoadDuration);
+            inv.DoPickup(item, duration);
         } 
         else if (ActiveDropOff)
         {
             var item = ActiveDropOff.NeededItem;
+
+            var duration = 2f;
+
+            if (LevelConfiguration.ItemDurations.ContainsKey(item))
+                duration = LevelConfiguration.ItemDurations[item].LoadDuration;
             
-            inv.DoDropOff(item, LevelConfiguration.ItemDurations[item].OffloadDuration);
+            inv.DoDropOff(item, duration);
         }
     }
 
@@ -184,12 +194,16 @@ public class GameplayManager : MonoBehaviour
 
     }
 
-    private void OnDropOffAction()
+    private void OnDropOffAction(ItemPickup.ItemType type)
     {
-        ActiveDropOff.ReceiveResource(1000);
+        var amount = 1000;
+
+        if (type == ItemPickup.ItemType.Health) amount = 3;
+        
+        ActiveDropOff.ReceiveResource(amount);
     }
 
-    private void OnPickupAction()
+    private void OnPickupAction(ItemPickup.ItemType type)
     {
         // IDK
     }
