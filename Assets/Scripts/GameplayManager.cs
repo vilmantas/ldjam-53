@@ -132,8 +132,6 @@ public class GameplayManager : MonoBehaviour
     {
         if (!InGracePeriod) return;
         
-        print("out of grace period");
-        
         InGracePeriod = false;
 
         GracePeriodStart = TimePassed;
@@ -142,8 +140,6 @@ public class GameplayManager : MonoBehaviour
     public void StartGracePeriod()
     {
         if (InGracePeriod) return;
-        
-        print("in grace period");
         
         InGracePeriod = true;
 
