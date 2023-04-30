@@ -6,6 +6,7 @@ using System.Linq;
 using Features.Camera;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -49,21 +50,25 @@ public class GameplayManager : MonoBehaviour
 
     public GameObject BombaParticles;
 
-    public Bounds BombaBounds;
-
     public int BombaRadius;
 
     public int BombaStrength;
 
+    public float BombaRateFrom;
+    
+    public float BombaRateTo;
+    
     void Awake()
     {
-        var bombaplane = GameObject.Find("bomba_plane");
+        var bombaConfigs = FindObjectsOfType<BombaConfiguration>();
 
-        if (bombaplane)
+        foreach (var bomba in bombaConfigs.ToList())
         {
-            var renderer = bombaplane.GetComponent<MeshRenderer>();
+            var renderer = bomba.GetComponent<MeshRenderer>();
 
-            BombaBounds = renderer.bounds;
+            var bounds = renderer.bounds;
+            
+            StartCoroutine(SpawnBomba(bomba, bounds));
         }
         
         BombaController.Manager = this;
@@ -101,20 +106,18 @@ public class GameplayManager : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
-
-        StartCoroutine(SpawnBomba());
     }
 
-    public IEnumerator SpawnBomba()
+    public IEnumerator SpawnBomba(BombaConfiguration config, Bounds bounds)
     {
         while (!IsGameOver || !IsLevelCompleted)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(Random.Range(config.BombaRateFrom, config.BombaRateTo));
 
             var target = new Vector3(
-                UnityEngine.Random.Range(BombaBounds.min.x, BombaBounds.max.x),
-                UnityEngine.Random.Range(BombaBounds.min.y, BombaBounds.max.y),
-                UnityEngine.Random.Range(BombaBounds.min.z, BombaBounds.max.z)
+                UnityEngine.Random.Range(bounds.min.x, bounds.max.x),
+                UnityEngine.Random.Range(bounds.min.y, bounds.max.y),
+                UnityEngine.Random.Range(bounds.min.z, bounds.max.z)
             );
             
             var ins = Instantiate(BombaPrefab, target, Quaternion.identity);
