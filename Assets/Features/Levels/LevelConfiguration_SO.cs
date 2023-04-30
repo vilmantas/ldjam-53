@@ -7,5 +7,8 @@ public class LevelConfiguration_SO : ScriptableObject
 {
     public string LevelName;
 
+    [Min(0.1f)]
+    public float TimeToSurviveMinutes;
+    
     public SceneList_SO AdditionalScenes;
 }

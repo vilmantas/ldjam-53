@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_0.unity
     guid: 45e097703f84486439927f794fa5f014
+  - enabled: 1
+    path: Assets/Scenes/Vilmanto_Test.unity
+    guid: 7d562937af4d8ce408b31d10eaf96d06
+  - enabled: 1
+    path: Assets/Scenes/Pause.unity
+    guid: a1f9d827d7ed2634f8f2a6e7ebd88f76
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: ffb07d2c0ceeb864180bb0470a17741a
   m_configObjects: {}
