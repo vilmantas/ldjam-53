@@ -9,16 +9,35 @@ public class ItemDropOff : MonoBehaviour
     public string Name;
     
     public ItemPickup.ItemType NeededItem;
-
-    [Range(0, 5000)]
+    
     public int Available;
     
-    [Range(0, 5000)]
     public int Max;
 
     public Action ResourceExpended;
 
     public bool IsDepleted => Available <= 0;
+    
+    public float RateFromSeconds;
+    
+    public float RateToSeconds;
+    
+    public float SuccessRate;
+    
+    public float HighUsageChance;
+
+    [Header("Usage Amounts")]
+    public int LowMin;
+
+    public int LowMax;
+    
+    public int HighMin;
+
+    public int HighMax;
+    
+    public int ResourceExpenseRateMin;
+
+    public int ResourceExpenseRateMax;
     
     private void Start()
     {
@@ -35,25 +54,25 @@ public class ItemDropOff : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
+            yield return new WaitForSeconds(Random.Range(RateFromSeconds, RateToSeconds));
 
-            if (Random.value >= 0.7f)
+            if (Random.value >= 1-SuccessRate)
             {
-                if (Random.value > 0.5f)
+                if (Random.value >= HighUsageChance)
                 {
-                    var amount = Random.Range(20, 40);
+                    var amount = Random.Range(LowMin, LowMax);
                     for (var i = 0; i < amount; i++)
                     {
-                        ExpendResource(Random.Range(1, 5));
+                        ExpendResource(Random.Range(ResourceExpenseRateMin, ResourceExpenseRateMax));
                         yield return new WaitForSeconds(Random.Range(0.01f, 0.05f));
                     }
                 }
                 else
                 {
-                    var amount = Random.Range(80, 120);
+                    var amount = Random.Range(HighMin, HighMax);
                     for (var i = 0; i < amount; i++)
                     {
-                        ExpendResource(Random.Range(1, 5));
+                        ExpendResource(Random.Range(ResourceExpenseRateMin, ResourceExpenseRateMax));
                         yield return new WaitForSeconds(Random.Range(0.01f, 0.05f));
                     }
                 }

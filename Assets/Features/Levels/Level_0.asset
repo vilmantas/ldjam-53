@@ -17,6 +17,9 @@ MonoBehaviour:
   LoseGracePeriod: 8.59
   ItemDurations:
   - ItemType: 1
-    LoadDuration: 1.39
+    LoadDuration: 0.76
+    OffloadDuration: 0.62
+  - ItemType: 2
+    LoadDuration: 0.76
     OffloadDuration: 0.62
   AdditionalScenes: {fileID: 11400000, guid: 340ebd4227f251f4a8bb05db7c5459df, type: 2}

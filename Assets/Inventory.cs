@@ -27,8 +27,8 @@ public class Inventory : MonoBehaviour
     public Action<ItemPickup> OnInRangeOfPickup;
     public Action<ItemDropOff> OnInRangeOfDropOff;
 
-    public Action OnPickupAction;
-    public Action OnDropOffAction;
+    public Action<ItemType> OnPickupAction;
+    public Action<ItemType> OnDropOffAction;
 
     public Action OnActionAttempt;
 
@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour
     {
         if (TryTakeItemOut(type))
         {
-            OnDropOffAction.Invoke();
+            OnDropOffAction.Invoke(type);
         }
 
         RefreshDisplay();
@@ -76,7 +76,7 @@ public class Inventory : MonoBehaviour
     {
         if (TryAddItem(type))
         {
-            OnPickupAction.Invoke();
+            OnPickupAction.Invoke(type);
         }
         RefreshDisplay();
     }
