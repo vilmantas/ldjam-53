@@ -6,7 +6,6 @@ using UnityEngine;
 public class BombaController : MonoBehaviour
 {
     public static GameplayManager Manager;
-    // Start is called before the first frame update
 
     private void OnCollisionEnter(Collision collision)
     {
