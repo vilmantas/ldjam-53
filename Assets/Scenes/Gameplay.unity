@@ -256,3 +256,5 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   BombaRadius: 10
   BombaStrength: 5000
+  BombaRateFrom: 1
+  BombaRateTo: 3
