@@ -10,5 +10,8 @@ public class LevelConfiguration_SO : ScriptableObject
     [Min(0.1f)]
     public float TimeToSurviveMinutes;
     
+    [Min(0f)]
+    public float LoseGracePeriod;
+    
     public SceneList_SO AdditionalScenes;
 }

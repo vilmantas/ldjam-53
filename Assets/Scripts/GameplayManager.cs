@@ -36,6 +36,12 @@ public class GameplayManager : MonoBehaviour
 
     public bool IsPaused;
 
+    public bool InGracePeriod;
+
+    public float GracePeriodStart;
+
+    public bool IsGameOver;
+    
     void Awake()
     {
         Truck = GameObject.Find("Truck");
@@ -70,6 +76,11 @@ public class GameplayManager : MonoBehaviour
         {
             // LOAD NEXT LEVEL LMAOOOO
         }
+
+        if (InGracePeriod)
+        {
+            CheckIfGameOver();
+        } 
         
         if (IsLevelCompleted) return;
         
@@ -79,6 +90,8 @@ public class GameplayManager : MonoBehaviour
             else Pause();
         }
         
+        CheckDropOffs();
+        
         if (!LevelConfiguration) return;
 
         if (TimePassed >= LevelConfiguration.TimeToSurviveMinutes * 60)
@@ -87,6 +100,52 @@ public class GameplayManager : MonoBehaviour
         }
         
         TimePassed += Time.deltaTime;
+    }
+
+    public void CheckIfGameOver()
+    {
+        var g = TimePassed - GracePeriodStart > LevelConfiguration.LoseGracePeriod;
+        
+        if (g) GameOver();
+    }
+    
+    public void GameOver()
+    {
+        if (IsGameOver) return;
+        
+        Time.timeScale = 0f;
+        IsGameOver = true;
+        SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("UI");
+        OnLevelDone?.Invoke();
+    }
+    
+    public void CheckDropOffs()
+    {
+        if (ActiveZones.Any(x => x.IsDepleted)) StartGracePeriod();
+        else StopGracePeriod();
+    }
+    
+    public void StopGracePeriod()
+    {
+        if (!InGracePeriod) return;
+        
+        print("out of grace period");
+        
+        InGracePeriod = false;
+
+        GracePeriodStart = TimePassed;
+    }
+
+    public void StartGracePeriod()
+    {
+        if (InGracePeriod) return;
+        
+        print("in grace period");
+        
+        InGracePeriod = true;
+
+        GracePeriodStart = TimePassed;
     }
 
     public void LevelCompleted()

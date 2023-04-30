@@ -18,6 +18,8 @@ public class ItemDropOff : MonoBehaviour
 
     public Action ResourceExpended;
 
+    public bool IsDepleted => Available <= 0;
+    
     private void Start()
     {
         StartCoroutine(BurstFire());
@@ -62,8 +64,9 @@ public class ItemDropOff : MonoBehaviour
     private void ExpendResource(int amount)
     {
         if (Available <= 0) return;
-        
-        Available -= amount;
+
+        Available = Math.Max(0, Available - amount);
+
         ResourceExpended.Invoke();
     }
 }

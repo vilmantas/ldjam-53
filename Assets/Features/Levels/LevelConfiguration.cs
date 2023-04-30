@@ -11,6 +11,9 @@ public class LevelConfiguration : MonoBehaviour
     [HideInInspector]
     public float TimeToSurviveMinutes;
     
+    [HideInInspector]
+    public float LoseGracePeriod;
+    
     [SerializeField]
     private LevelConfiguration_SO Configuration;
 
@@ -18,5 +21,6 @@ public class LevelConfiguration : MonoBehaviour
     {
         LevelName = Configuration.LevelName;
         TimeToSurviveMinutes = Configuration.TimeToSurviveMinutes;
+        LoseGracePeriod = Configuration.LoseGracePeriod;
     }
 }

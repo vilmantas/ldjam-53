@@ -233,6 +233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4a93786c450fd44aeb14057ca670c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelName: 
+  TimeToSurviveMinutes: 0
+  LoseGracePeriod: 0
   Configuration: {fileID: 11400000, guid: dcfee992d3a17cf488bda30397ac1ba4, type: 2}
 --- !u!4 &336357969 stripped
 Transform:
@@ -329,11 +332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5415220770488019970, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
       propertyPath: Name
-      value: Test Bunker
+      value: SOUTH
       objectReference: {fileID: 0}
     - target: {fileID: 5415220770488019970, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
       propertyPath: Available
-      value: 2532
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 5415220770488019970, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
       propertyPath: NeededItem
