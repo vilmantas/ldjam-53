@@ -39,13 +39,26 @@ public class GameplayManager : MonoBehaviour
     public bool IsGameOver;
 
     public Inventory inv;
+
+    public int RespanwsLeft;
+
+    public Vector3 Spawn;
     
     void Awake()
     {
+        Spawn = GameObject.Find("spawn_point")?.transform.position ?? Vector3.zero;
+        
         Truck = GameObject.Find("Truck");
 
         LevelConfiguration = GameObject.Find("Configuration")?.GetComponent<LevelConfiguration>();
 
+        RespanwsLeft = 3;
+        
+        if (LevelConfiguration)
+        {
+            RespanwsLeft = LevelConfiguration.RespawnsAllowed;
+        }
+        
         inv = Truck.GetComponentInChildren<Inventory>();
 
         inv.OnZoneLeft += LeavingTriggerZone;
@@ -98,7 +111,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (IsLevelCompleted && Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            // LOAD NEXT LEVEL LMAOOOO
+            GameObject.FindFirstObjectByType<GameManager>().StartNextLevel();
         }
 
         if (InGracePeriod)
@@ -107,6 +120,22 @@ public class GameplayManager : MonoBehaviour
         } 
         
         if (IsLevelCompleted) return;
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (RespanwsLeft > 0)
+            {
+                Truck.transform.position = Spawn;
+                Truck.transform.rotation = Quaternion.identity;
+
+                var rb = Truck.GetComponent<Rigidbody>();
+                
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                
+                RespanwsLeft--;
+            }
+        }
         
         if (Input.GetKeyDown(KeyCode.P))
         {

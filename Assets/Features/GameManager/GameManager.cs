@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(manager);
     }
 
+    public int CurrentLevelIndex;
+    
     public GameConfiguration_SO Configuration;
 
     public void StartGame(LevelConfiguration_SO config)
@@ -40,5 +42,29 @@ public class GameManager : MonoBehaviour
         {
             StartGame(Configuration.Levels.Levels[1]);
         }
+
+        if (Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            StartGame();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Keypad8))
+        {
+            StartNextLevel();
+        }
+    }
+
+    public void StartGame()
+    {
+        CurrentLevelIndex = 0;
+        
+        StartGame(Configuration.Levels.Levels[CurrentLevelIndex]);
+    }
+
+    public void StartNextLevel()
+    {
+        if (Configuration.Levels.Levels.Length > CurrentLevelIndex+1)
+
+        StartGame(Configuration.Levels.Levels[++CurrentLevelIndex]);
     }
 }
