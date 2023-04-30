@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -21,24 +22,65 @@ public class Inventory : MonoBehaviour
     public List<InventoryItem> InvenotryItemMap = new List<InventoryItem>();
     private List<GameObject> InvenotryDisplayItems = new List<GameObject>();
 
-    public Action<ItemType> OnPickupAvailable;
-    public Action<ItemType> OnDropOffAvailable;
     public Action OnZoneLeft;
-    
+
+    public Action<ItemPickup> OnInRangeOfPickup;
+    public Action<ItemDropOff> OnInRangeOfDropOff;
+
+    public Action OnPickupAction;
+    public Action OnDropOffAction;
+
+    public Action OnActionAttempt;
+
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && _inRangePickupType is not null && HasEmptySlot())
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            AddItem(_inRangePickupType.Value);
-            RefreshDisplay();
+            OnActionAttempt.Invoke();
+        }
+    }
+
+    private bool HasItem(ItemType type) => _inventory.Any(x => x == type);
+    
+    public void DoDropOff(ItemType type, float delay)
+    {
+        if (!HasItem(type)) return;
+        
+        StartCoroutine(DelayedAction(delay, () => DropOff(type)));
+    }
+
+    private void DropOff(ItemType type)
+    {
+        if (TryTakeItemOut(type))
+        {
+            OnDropOffAction.Invoke();
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && _inRangeDropOffType is not null)
+        RefreshDisplay();
+    }
+    
+    public void DoPickup(ItemType type, float delay)
+    {
+        if (!HasEmptySlot()) return;
+        
+        StartCoroutine(DelayedAction(delay, () => Pickup(type)));
+    }
+
+    private void Pickup(ItemType type)
+    {
+        if (TryAddItem(type))
         {
-            TryTakeItemOut(_inRangeDropOffType.Value);
-            RefreshDisplay();
+            OnPickupAction.Invoke();
         }
+        RefreshDisplay();
+    }
+
+    public IEnumerator DelayedAction(float delay, Action action)
+    {
+        yield return new WaitForSeconds(delay);
+        
+        action.Invoke();
     }
 
     // Update is called once per frame
@@ -46,28 +88,15 @@ public class Inventory : MonoBehaviour
     {
         var pickup = other.GetComponent<ItemPickup>();
 
-        if (pickup is not null) 
-        {
-            _inRangePickupType = other.GetComponent<ItemPickup>().GetItem();
-            
-            OnPickupAvailable.Invoke(_inRangePickupType.Value);
-        }
+        if (pickup is not null) OnInRangeOfPickup.Invoke(pickup);
 
         var dropoff = other.GetComponent<ItemDropOff>();
 
-        if (dropoff is not null)
-        {
-            _inRangeDropOffType = dropoff.NeededItem;
-            
-            OnDropOffAvailable.Invoke(_inRangeDropOffType.Value);
-        }
+        if (dropoff is not null) OnInRangeOfDropOff.Invoke(dropoff);
     }
 
     public void OnTriggerExit(Collider other)
     {
-        _inRangePickupType = null;
-        _inRangeDropOffType = null;
-
         OnZoneLeft.Invoke();
     }
 
@@ -89,16 +118,18 @@ public class Inventory : MonoBehaviour
     {
         return _inventory.Any(i => i == null);
     }
-    private void AddItem(ItemType type)
+    private bool TryAddItem(ItemType type)
     {
         for (int n = 0; n < _inventory.Length; n++)
         {
             if (_inventory[n] == null)
             {
                 _inventory[n] = type;
-                return;
+                return true;
             }
         }
+
+        return false;
     }
     private void RefreshDisplay()
     {

@@ -6,6 +6,7 @@ public class ItemPickup : MonoBehaviour
 {
     public enum ItemType
     {
+        None,
         Ammo,
         Health
     }

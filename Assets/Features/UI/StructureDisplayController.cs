@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DropOffDisplayController : MonoBehaviour
+public class StructureDisplayController : MonoBehaviour
 {
-    public TextMeshProUGUI DropOffText;
-
     public GameplayManager p_GameplayManager;
+
+    public RectTransform Container;
+
+    public ItemDropOffUIController Prefab;
     
     // Start is called before the first frame update
     void Start()
@@ -25,20 +27,16 @@ public class DropOffDisplayController : MonoBehaviour
         }
 
         p_GameplayManager = gg;
-        
-        gg.OnDropOffAvailable += OnDropOffAvailable;
-        
-        gg.OnLeavingZone += OnLeavingZone;
-    }
 
-    private void OnLeavingZone()
-    {
-        DropOffText.enabled = false;
-    }
-
-    private void OnDropOffAvailable()
-    {
-        DropOffText.enabled = true;
-        DropOffText.text = $"PRESS E TO DROP OFF {p_GameplayManager.ActiveDropOff.NeededItem}";
+        foreach (Transform child in Container.transform) {
+            Destroy(child.gameObject);
+        }
+        
+        foreach (var zone in gg.ActiveZones)
+        {
+            var z = Instantiate(Prefab, Container);
+            
+            z.Initialize(zone);
+        }
     }
 }

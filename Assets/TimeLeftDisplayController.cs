@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DropOffDisplayController : MonoBehaviour
+public class TimeLeftDisplayController : MonoBehaviour
 {
-    public TextMeshProUGUI DropOffText;
-
+    public TextMeshProUGUI TimeLeft;
+    
     public GameplayManager p_GameplayManager;
     
     // Start is called before the first frame update
@@ -25,20 +26,15 @@ public class DropOffDisplayController : MonoBehaviour
         }
 
         p_GameplayManager = gg;
-        
-        gg.OnDropOffAvailable += OnDropOffAvailable;
-        
-        gg.OnLeavingZone += OnLeavingZone;
     }
 
-    private void OnLeavingZone()
+    private void Update()
     {
-        DropOffText.enabled = false;
-    }
+        if (p_GameplayManager.LevelConfiguration == null) return;
+        
+        var timeLeft = TimeSpan.FromSeconds((p_GameplayManager.LevelConfiguration.TimeToSurviveMinutes * 60) -
+                                            p_GameplayManager.TimePassed);
 
-    private void OnDropOffAvailable()
-    {
-        DropOffText.enabled = true;
-        DropOffText.text = $"PRESS E TO DROP OFF {p_GameplayManager.ActiveDropOff.NeededItem}";
+        TimeLeft.text = timeLeft.ToString(@"mm\:ss");
     }
 }

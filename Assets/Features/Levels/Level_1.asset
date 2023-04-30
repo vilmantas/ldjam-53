@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Level_1
   m_EditorClassIdentifier: 
   LevelName: Level_1
+  TimeToSurviveMinutes: 0.1
+  LoseGracePeriod: 2.74
+  ItemDurations:
+  - ItemType: 1
+    LoadDuration: 1
+    OffloadDuration: 2
   AdditionalScenes: {fileID: 11400000, guid: 340ebd4227f251f4a8bb05db7c5459df, type: 2}
