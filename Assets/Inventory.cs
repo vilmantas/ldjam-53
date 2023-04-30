@@ -24,19 +24,32 @@ public class Inventory : MonoBehaviour
     public Action<ItemType> OnPickupAvailable;
     public Action<ItemType> OnDropOffAvailable;
     public Action OnZoneLeft;
-    
+
+    public Action<ItemPickup> OnInRangeOfPickup;
+    public Action<ItemDropOff> OnInRangeOfDropOff;
+
+    public Action OnPickupAction;
+    public Action OnDropOffAction;
+
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && _inRangePickupType is not null && HasEmptySlot())
         {
-            AddItem(_inRangePickupType.Value);
+            if (TryAddItem(_inRangePickupType.Value))
+            {
+                OnPickupAction.Invoke();
+            }
             RefreshDisplay();
         }
 
         if (Input.GetKeyDown(KeyCode.E) && _inRangeDropOffType is not null)
         {
-            TryTakeItemOut(_inRangeDropOffType.Value);
+            if (TryTakeItemOut(_inRangeDropOffType.Value))
+            {
+                OnDropOffAction.Invoke();
+            }
+
             RefreshDisplay();
         }
     }
@@ -48,9 +61,11 @@ public class Inventory : MonoBehaviour
 
         if (pickup is not null) 
         {
-            _inRangePickupType = other.GetComponent<ItemPickup>().GetItem();
+            _inRangePickupType = pickup.GetItem();
             
             OnPickupAvailable.Invoke(_inRangePickupType.Value);
+            
+            OnInRangeOfPickup.Invoke(pickup);
         }
 
         var dropoff = other.GetComponent<ItemDropOff>();
@@ -60,6 +75,8 @@ public class Inventory : MonoBehaviour
             _inRangeDropOffType = dropoff.NeededItem;
             
             OnDropOffAvailable.Invoke(_inRangeDropOffType.Value);
+            
+            OnInRangeOfDropOff.Invoke(dropoff);
         }
     }
 
@@ -89,16 +106,18 @@ public class Inventory : MonoBehaviour
     {
         return _inventory.Any(i => i == null);
     }
-    private void AddItem(ItemType type)
+    private bool TryAddItem(ItemType type)
     {
         for (int n = 0; n < _inventory.Length; n++)
         {
             if (_inventory[n] == null)
             {
                 _inventory[n] = type;
-                return;
+                return true;
             }
         }
+
+        return false;
     }
     private void RefreshDisplay()
     {

@@ -25,7 +25,8 @@ public class ItemDropOff : MonoBehaviour
 
     public void ReceiveResource(int amount)
     {
-        Available += amount;
+        Available = Math.Min(Max, Available + amount);
+        ResourceExpended.Invoke();
     }
 
     private IEnumerator BurstFire()
