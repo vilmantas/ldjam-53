@@ -35,23 +35,23 @@ public class ItemDropOff : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
 
-            if (Random.value >= 0.5f)
+            if (Random.value >= 0.7f)
             {
                 if (Random.value > 0.5f)
                 {
-                    var amount = Random.Range(50, 100);
+                    var amount = Random.Range(20, 40);
                     for (var i = 0; i < amount; i++)
                     {
-                        ExpendResource();
+                        ExpendResource(Random.Range(1, 5));
                         yield return new WaitForSeconds(Random.Range(0.01f, 0.05f));
                     }
                 }
                 else
                 {
-                    var amount = Random.Range(200, 400);
+                    var amount = Random.Range(80, 120);
                     for (var i = 0; i < amount; i++)
                     {
-                        ExpendResource();
+                        ExpendResource(Random.Range(1, 5));
                         yield return new WaitForSeconds(Random.Range(0.01f, 0.05f));
                     }
                 }
@@ -59,11 +59,11 @@ public class ItemDropOff : MonoBehaviour
         }
     }
 
-    private void ExpendResource()
+    private void ExpendResource(int amount)
     {
         if (Available <= 0) return;
         
-        Available--;
+        Available -= amount;
         ResourceExpended.Invoke();
     }
 }
