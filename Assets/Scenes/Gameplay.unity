@@ -235,3 +235,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00c01d93a8a526439c83c23fc2e32bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Truck: {fileID: 0}
+  ActiveZones: []
+  ActiveDropOff: {fileID: 0}
+  ActivePickup: {fileID: 0}
+  LevelConfiguration: {fileID: 0}
+  TimePassed: 0
+  IsLevelCompleted: 0
+  IsPaused: 0
+  InGracePeriod: 0
+  GracePeriodStart: 0
+  IsGameOver: 0
+  inv: {fileID: 0}
+  RespanwsLeft: 0
+  Spawn: {x: 0, y: 0, z: 0}
+  BombaPrefab: {fileID: 6940425973516033402, guid: 19dfdbf9734f8cc458bac4d1d9ed6aef, type: 3}
+  BombaParticles: {fileID: 3534201156210021860, guid: c094d37d0db80a242b709fff6b9f8bc9, type: 3}
+  BombaBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  BombaRadius: 10
+  BombaStrength: 5000

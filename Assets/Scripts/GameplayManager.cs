@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using Features.Camera;
 using UnityEngine;
@@ -43,9 +44,30 @@ public class GameplayManager : MonoBehaviour
     public int RespanwsLeft;
 
     public Vector3 Spawn;
-    
+
+    public GameObject BombaPrefab;
+
+    public GameObject BombaParticles;
+
+    public Bounds BombaBounds;
+
+    public int BombaRadius;
+
+    public int BombaStrength;
+
     void Awake()
     {
+        var bombaplane = GameObject.Find("bomba_plane");
+
+        if (bombaplane)
+        {
+            var renderer = bombaplane.GetComponent<MeshRenderer>();
+
+            BombaBounds = renderer.bounds;
+        }
+        
+        BombaController.Manager = this;
+        
         Spawn = GameObject.Find("spawn_point")?.transform.position ?? Vector3.zero;
         
         Truck = GameObject.Find("Truck");
@@ -79,8 +101,47 @@ public class GameplayManager : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+
+        StartCoroutine(SpawnBomba());
     }
 
+    public IEnumerator SpawnBomba()
+    {
+        while (!IsGameOver || !IsLevelCompleted)
+        {
+            yield return new WaitForSeconds(1f);
+
+            var target = new Vector3(
+                UnityEngine.Random.Range(BombaBounds.min.x, BombaBounds.max.x),
+                UnityEngine.Random.Range(BombaBounds.min.y, BombaBounds.max.y),
+                UnityEngine.Random.Range(BombaBounds.min.z, BombaBounds.max.z)
+            );
+            
+            var ins = Instantiate(BombaPrefab, target, Quaternion.identity);
+            
+            Destroy(ins, 10f);
+        }
+    }
+
+    public void DoBomba(Vector3 position)
+    {
+        var instance = Instantiate(BombaParticles, position, Quaternion.identity);
+
+        Vector3 explosionPos = position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, BombaRadius);
+
+        var truck = colliders.FirstOrDefault(x => x.name == "Truck");
+
+        if (truck != null)
+        {
+            Rigidbody rb = truck.GetComponentInParent<Rigidbody>();
+            
+            rb.AddExplosionForce(BombaStrength, explosionPos, 0f, 3.0F, ForceMode.Impulse);
+        }
+        
+        Destroy(instance, 3f);
+    }
+    
     private void OnActionAttempt()
     {
         if (ActivePickup)
