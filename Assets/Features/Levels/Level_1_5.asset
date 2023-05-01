@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3d17f3b9a5457c428332f37bd19b751, type: 3}
-  m_Name: Level_0
+  m_Name: Level_1_5
   m_EditorClassIdentifier: 
-  LevelName: Level_0
+  LevelName: Level_2
   RespawnsAllowed: 1000
-  TimeToSurviveMinutes: 2
-  LoseGracePeriod: 30
+  TimeToSurviveMinutes: 5
+  LoseGracePeriod: 15
   ItemDurations:
   - ItemType: 1
     LoadDuration: 1
