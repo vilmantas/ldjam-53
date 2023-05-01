@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ProBuilderDefault
-    second: {fileID: 2100000, guid: 14f00c612b9d20d4ebb9d96a3ac95eb8, type: 2}
+      name: MainPalette
+    second: {fileID: 2100000, guid: dd97db8baeca04843b00532569815e28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainPalette.001
+    second: {fileID: 2100000, guid: fb1371a8287f4094293dc4ce01904101, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainPalette.002
+    second: {fileID: 2100000, guid: 981fcae290118f44f9f7eacb75088c1a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

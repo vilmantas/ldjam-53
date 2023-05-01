@@ -6,10 +6,8 @@ using Random = UnityEngine.Random;
 
 public class ItemDropOff : MonoBehaviour
 {
-    public string Name;
-    
     public ItemPickup.ItemType NeededItem;
-    
+
     public int Available;
     
     public int Max;
