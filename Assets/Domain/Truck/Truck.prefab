@@ -263,6 +263,7 @@ MonoBehaviour:
   boost: 10
   StartAudio: {fileID: 6921512116682925815}
   IdleAudio: {fileID: -6672364071764330707}
+  CrashAudio: {fileID: 4130390617445138986}
 --- !u!82 &6921512116682925815
 AudioSource:
   m_ObjectHideFlags: 0

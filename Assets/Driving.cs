@@ -42,7 +42,10 @@ public class Driving : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (CrashAudio.isPlaying) return;
+        
         CrashAudio.Play();
+        
     }
 
     public void FixedUpdate()
