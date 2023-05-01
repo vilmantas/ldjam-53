@@ -9,6 +9,8 @@ public class DropOffZone : MonoBehaviour
 {
     public string Name;
 
+    public Color color;
+
     [HideInInspector]
     public ItemDropOff[] DropOffs;
 

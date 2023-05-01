@@ -20,6 +20,8 @@ public class ItemDropOffUIController : MonoBehaviour
         m_items = zone.DropOffs;
         
         Title.text = zone.Name;
+        
+        Title.color = zone.color;
 
         foreach (var itemDrop in m_items)
         {
