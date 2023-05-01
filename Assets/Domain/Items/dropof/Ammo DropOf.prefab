@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 860377253509258151}
   - component: {fileID: 544889383182778289}
   - component: {fileID: 6644893801355709500}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b46e7a766a3314c88380d7736dbad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: East
   NeededItem: 1
   Available: 7000
   Max: 8000
