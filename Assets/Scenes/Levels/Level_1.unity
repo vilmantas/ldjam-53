@@ -358,6 +358,10 @@ PrefabInstance:
       value: Shell DropOf
       objectReference: {fileID: 0}
     - target: {fileID: 3173761333161707259, guid: 57f0fb410c448e446a8eea0fe3341ddc, type: 3}
+      propertyPath: SuccessRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173761333161707259, guid: 57f0fb410c448e446a8eea0fe3341ddc, type: 3}
       propertyPath: RateToSeconds
       value: 30
       objectReference: {fileID: 0}
@@ -705,6 +709,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 457209990}
     m_Modifications:
+    - target: {fileID: 3412074943358691795, guid: a66c3b43604754848befc6ee90973108, type: 3}
+      propertyPath: SuccessRate
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3412074943358691795, guid: a66c3b43604754848befc6ee90973108, type: 3}
       propertyPath: RateToSeconds
       value: 20
@@ -6186,7 +6194,7 @@ TerrainCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: 583f1dd427352c946a8b0d76452afc33, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 6eb07c9708f338347939bac43c604038, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1739534082
 Terrain:
