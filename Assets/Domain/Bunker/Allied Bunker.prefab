@@ -243,10 +243,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTransform: {fileID: 3658473460637274280}
   bullet: {fileID: 6973774335309996131, guid: a644e1dd0d13faf46b1270dbd24373f6, type: 3}
-  variance: 2.02
-  gunSpeed: 0.46
+  variance: 2
+  gunSpeed: 0.1
   magazineSize: 17.11
-  reloadTime: 1.91
+  reloadTime: 10
   bulletSpeed: 12.7
   BulletSpawn: {fileID: 4534163046798368588}
   BulletAudioSpawn: {fileID: 6817792747521414598}
