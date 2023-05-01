@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 50220547}
   - component: {fileID: 50220548}
   m_Layer: 5
-  m_Name: Bunkers
+  m_Name: Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,9 +158,9 @@ RectTransform:
   m_Father: {fileID: 1573934981}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -626, y: 489.49994}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 242.65009, y: 1.8150024}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &50220545
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.2901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -219,7 +219,7 @@ MonoBehaviour:
     m_Top: 10
     m_Bottom: 10
   m_ChildAlignment: 0
-  m_Spacing: 20
+  m_Spacing: 5
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p_GameplayManager: {fileID: 0}
   Container: {fileID: 50220544}
-  Prefab: {fileID: 5650856598499638817, guid: da0fd45cf408b274eb05a88202beaea7, type: 3}
+  Prefab: {fileID: 1068407402638073463, guid: da0fd45cf408b274eb05a88202beaea7, type: 3}
 --- !u!114 &1573934987
 MonoBehaviour:
   m_ObjectHideFlags: 0

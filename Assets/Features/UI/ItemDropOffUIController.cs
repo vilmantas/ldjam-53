@@ -14,7 +14,7 @@ public class ItemDropOffUIController : MonoBehaviour
     public ItemDropOff[] m_items;
 
     public StatusBarDisplayScript StatusBarPrefab;
-
+    public RectTransform Container;
     public void Initialize(DropOffZone zone)
     {
         m_items = zone.DropOffs;
@@ -23,7 +23,7 @@ public class ItemDropOffUIController : MonoBehaviour
 
         foreach (var itemDrop in m_items)
         {
-            var ins = Instantiate(StatusBarPrefab, transform);
+            var ins = Instantiate(StatusBarPrefab, Container);
             
             ins.Initialize(itemDrop);
         }
