@@ -274,6 +274,12 @@ public class GameplayManager : MonoBehaviour
 
     public void LevelCompleted()
     {
+        if (m_GameManager.IsLastLevel)
+        {
+            SceneManager.LoadScene("GameDone");
+
+            return;
+        } 
         Time.timeScale = 0f;
         IsLevelCompleted = true;
         SceneManager.LoadScene("Victory", LoadSceneMode.Additive);

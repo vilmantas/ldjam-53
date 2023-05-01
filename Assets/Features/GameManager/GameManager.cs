@@ -31,29 +31,6 @@ public class GameManager : MonoBehaviour
         LoadingManager.Instance.LoadScenes(new List<string>() { level, config.LightingScene }.Concat(additionalScenes), config.LightingScene);
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Keypad0)) 
-        {
-            StartGame(Configuration.Levels.Levels[0]);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            StartGame(Configuration.Levels.Levels[1]);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad9))
-        {
-            StartGame();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Keypad8))
-        {
-            StartNextLevel();
-        }
-    }
-
     public void StartGame()
     {
         CurrentLevelIndex = 0;
@@ -72,4 +49,6 @@ public class GameManager : MonoBehaviour
     {
         StartGame(Configuration.Levels.Levels[CurrentLevelIndex]);
     }
+
+    public bool IsLastLevel => Configuration.Levels.Levels.Length == CurrentLevelIndex + 1;
 }
