@@ -17,7 +17,7 @@ public class Firing : MonoBehaviour
 
     private void OnEnable()
     {
-        InvokeRepeating("FireMagazine", 0, reloadTime);
+        InvokeRepeating("FireMagazine", reloadTime * Random.value * 3, reloadTime + Random.value * 3);
     }
 
     void FireMagazine()
