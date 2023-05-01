@@ -20,7 +20,6 @@ public class Driving : MonoBehaviour
 
     private void Start()
     {
-        Debug.LogError("Loading Driver");
         IdleAudio.PlayDelayed(StartAudio.clip.length - 0.5f);
     }
 

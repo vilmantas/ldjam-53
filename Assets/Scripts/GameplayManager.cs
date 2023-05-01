@@ -63,7 +63,6 @@ public class GameplayManager : MonoBehaviour
     
     void Awake()
     {
-        Debug.LogError("BYBYS");
         m_GameManager = FindFirstObjectByType<GameManager>();
         var bombaConfigs = FindObjectsOfType<BombaConfiguration>();
 
