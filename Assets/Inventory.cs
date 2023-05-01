@@ -158,6 +158,17 @@ public class Inventory : MonoBehaviour
 
         return false;
     }
+
+    public void ClearInventory()
+    {
+        for (int i = 0; i < _inventory.Length; i++)
+        {
+            _inventory[i] = null;
+        }
+        
+        RefreshDisplay();
+    }
+    
     private void RefreshDisplay()
     {
         InvenotryDisplayItems.ForEach(i => Destroy(i));

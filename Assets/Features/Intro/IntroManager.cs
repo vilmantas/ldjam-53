@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IntroManager : MonoBehaviour
 {
     private GameManager manager;
+
+    public AudioSource Audio;
+
+    public Slider Slider;
     
     void Start()
     {
@@ -14,5 +19,12 @@ public class IntroManager : MonoBehaviour
     public void OnStartClicked()
     {
         manager.StartGame();
+    }
+
+    public void OnVolumeChange()
+    {
+        manager.Volume = Slider.value;
+        Audio.volume = Slider.value;
+        Audio.Play();
     }
 }

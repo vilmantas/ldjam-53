@@ -64,6 +64,14 @@ public class GameplayManager : MonoBehaviour
     void Awake()
     {
         m_GameManager = FindFirstObjectByType<GameManager>();
+        
+        var audios = FindObjectsOfType<AudioSource>();
+
+        foreach (var audio in audios)
+        {
+            audio.volume = m_GameManager.Volume;
+        }
+        
         var bombaConfigs = FindObjectsOfType<BombaConfiguration>();
 
         foreach (var bomba in bombaConfigs.ToList())
@@ -77,7 +85,7 @@ public class GameplayManager : MonoBehaviour
         
         BombaController.Manager = this;
         
-        Spawn = GameObject.Find("spawn_point")?.transform;
+        Spawn = FindObjectOfType<SpawnPoint>()?.transform;
         
         Truck = FindObjectOfType<Driving>().transform.root.gameObject;
 
@@ -198,6 +206,12 @@ public class GameplayManager : MonoBehaviour
         {
             if (RespanwsLeft > 0)
             {
+                var inv = Truck.GetComponentInChildren<Inventory>();
+
+                if (Spawn == null) return;
+                
+                inv.ClearInventory();
+                
                 Truck.transform.position = Spawn.position;
                 Truck.transform.rotation = Spawn.rotation;
 

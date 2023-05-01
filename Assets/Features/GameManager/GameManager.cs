@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(manager);
     }
 
+    public float Volume;
+    
     public int CurrentLevelIndex;
     
     public GameConfiguration_SO Configuration;
