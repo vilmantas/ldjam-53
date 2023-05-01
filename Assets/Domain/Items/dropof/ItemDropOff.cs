@@ -92,6 +92,6 @@ public class ItemDropOff : MonoBehaviour
 
         Available = Math.Max(0, Available - amount);
 
-        ResourceExpended.Invoke();
+        ResourceExpended?.Invoke();
     }
 }
