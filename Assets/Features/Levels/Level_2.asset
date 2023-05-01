@@ -14,11 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelName: Level_2
   RespawnsAllowed: 0
-  TimeToSurviveMinutes: 5
-  LoseGracePeriod: 2.74
+  TimeToSurviveMinutes: 10
+  LoseGracePeriod: 15
   ItemDurations:
   - ItemType: 1
     LoadDuration: 1
-    OffloadDuration: 2
+    OffloadDuration: 0.5
+  - ItemType: 2
+    LoadDuration: 1
+    OffloadDuration: 0.5
+  - ItemType: 3
+    LoadDuration: 1
+    OffloadDuration: 0.5
   LightingScene: _Lighting
   AdditionalScenes: {fileID: 11400000, guid: 340ebd4227f251f4a8bb05db7c5459df, type: 2}
