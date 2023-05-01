@@ -44,7 +44,7 @@ public class GameplayManager : MonoBehaviour
 
     public int RespanwsLeft;
 
-    public Vector3 Spawn;
+    public Transform Spawn;
 
     public GameObject BombaPrefab;
 
@@ -76,7 +76,7 @@ public class GameplayManager : MonoBehaviour
         
         BombaController.Manager = this;
         
-        Spawn = GameObject.Find("spawn_point")?.transform.position ?? Vector3.zero;
+        Spawn = GameObject.Find("spawn_point")?.transform;
         
         Truck = GameObject.Find("Truck");
 
@@ -199,8 +199,8 @@ public class GameplayManager : MonoBehaviour
         {
             if (RespanwsLeft > 0)
             {
-                Truck.transform.position = Spawn;
-                Truck.transform.rotation = Quaternion.identity;
+                Truck.transform.position = Spawn.position;
+                Truck.transform.rotation = Spawn.rotation;
 
                 var rb = Truck.GetComponent<Rigidbody>();
                 
