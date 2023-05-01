@@ -63,6 +63,7 @@ public class GameplayManager : MonoBehaviour
     
     void Awake()
     {
+        Debug.LogError("BYBYS");
         m_GameManager = FindFirstObjectByType<GameManager>();
         var bombaConfigs = FindObjectsOfType<BombaConfiguration>();
 
@@ -79,9 +80,9 @@ public class GameplayManager : MonoBehaviour
         
         Spawn = GameObject.Find("spawn_point")?.transform;
         
-        Truck = GameObject.Find("Truck");
+        Truck = FindObjectOfType<Driving>().transform.root.gameObject;
 
-        LevelConfiguration = GameObject.Find("Configuration")?.GetComponent<LevelConfiguration>();
+        LevelConfiguration = FindObjectOfType<LevelConfiguration>();
 
         RespanwsLeft = 3;
         
@@ -102,8 +103,6 @@ public class GameplayManager : MonoBehaviour
         
         inv.OnActionAttempt += OnActionAttempt;
         
-        CameraManager.Instance.ChangeTarget(Truck.gameObject.transform, Truck.gameObject.transform);
-
         ActiveZones = FindObjectsOfType<DropOffZone>().ToList();
 
         if (Time.timeScale == 0f)

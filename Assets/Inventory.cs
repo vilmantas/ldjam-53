@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Features.Camera;
 using UnityEngine;
 using static ItemPickup;
 
@@ -44,6 +45,8 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         _inventory = new ItemType?[InvenotrySlots.Count()];
+
+        FindObjectOfType<CameraManager>().ChangeTarget(transform.root.gameObject.transform, transform.root.gameObject.transform);
     }
     void Update()
     {
