@@ -2609,7 +2609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493721427201177117, guid: aa63465e13f1aa74e9a46aea88392450, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2239656
+      value: -3.02
       objectReference: {fileID: 0}
     - target: {fileID: 1493721427201177117, guid: aa63465e13f1aa74e9a46aea88392450, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4302,32 +4302,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4409298550774129287, guid: d9b862fb9398b5e4ca8450843c892466, type: 3}
   m_PrefabInstance: {fileID: 3266137}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1980406236 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2916376906726960990, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
-  m_PrefabInstance: {fileID: 2996839572634396335}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1980406239
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980406236}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 26.77, y: 25.4, z: 25.82}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1982709156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8600955382408772778, guid: 667e17885f1e15c49adcb0ff0268b373, type: 3}
@@ -4775,15 +4749,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2916376906726960990, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9200662784285752921, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 929461694}
-    - targetCorrespondingSourceObject: {fileID: 2916376906726960990, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1980406239}
   m_SourcePrefab: {fileID: 100100000, guid: e398cd7f9ddd1d849aa49020e5d33be6, type: 3}
 --- !u!1001 &3365175008282405353
 PrefabInstance:

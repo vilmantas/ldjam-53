@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8448205382753248166}
   - component: {fileID: 9019066142447700517}
   - component: {fileID: 2306734292526791814}
-  - component: {fileID: 3298258477408369542}
+  - component: {fileID: 5309377010593306768}
   m_Layer: 0
   m_Name: Bushes_3
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3298258477408369542
-BoxCollider:
+--- !u!136 &5309377010593306768
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,6 +102,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.2363883, y: 1.2912197, z: 1.3100891}
+  serializedVersion: 2
+  m_Radius: 0.65504456
+  m_Height: 1.2912197
+  m_Direction: 1
   m_Center: {x: 0.07544345, y: 0.6334791, z: 0.034864426}
