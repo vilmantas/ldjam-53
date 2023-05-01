@@ -302,7 +302,11 @@ public class GameplayManager : MonoBehaviour
     {
         var amount = 1000;
         
-        if (ActiveDropOff == null) return;;
+        if (ActiveDropOff == null)
+        {
+            inv.Pickup(type);
+            return;
+        }
         
         ActiveDropOff.ReceiveResource(amount);
     }
