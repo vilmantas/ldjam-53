@@ -37,6 +37,8 @@ public class Inventory : MonoBehaviour
 
     public Action OnActionAttempt;
 
+    public Action OnInvalidLocationReached;
+
     public Action<float> OnStartAction;
     public Action OnStopAction;
 
@@ -113,6 +115,13 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("InvalidLocation"))
+        {
+            OnInvalidLocationReached.Invoke();
+
+            return;
+        }
+        
         var pickup = other.GetComponent<ItemPickup>();
 
         if (pickup is not null) OnInRangeOfPickup.Invoke(pickup);

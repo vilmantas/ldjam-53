@@ -105,6 +105,8 @@ public class GameplayManager : MonoBehaviour
         inv.OnInRangeOfPickup += OnInRangeOfPickup;
         inv.OnInRangeOfDropOff += OnInRangeOfDropOff;
         
+        inv.OnInvalidLocationReached += OnInvalidLocationReached;
+        
         inv.OnPickupAction += OnPickupAction;
         inv.OnDropOffAction += OnDropOffAction;
         
@@ -116,6 +118,11 @@ public class GameplayManager : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+    }
+
+    private void OnInvalidLocationReached()
+    {
+        ResetPlayer();
     }
 
     public IEnumerator SpawnBomba(BombaConfiguration config, Bounds bounds)
@@ -181,8 +188,37 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
+    private void ResetPlayer()
+    {
+        if (RespanwsLeft > 0)
+        {
+            var inv = Truck.GetComponentInChildren<Inventory>();
+
+            if (Spawn == null) return;
+                
+            inv.ClearInventory();
+                
+            Truck.transform.position = Spawn.position;
+            Truck.transform.rotation = Spawn.rotation;
+
+            var rb = Truck.GetComponent<Rigidbody>();
+                
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+                
+            RespanwsLeft--;
+        }
+    }
+    
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Intro");
+
+            return;
+        }
+        
         if (IsLevelCompleted && Input.GetKeyDown(KeyCode.Return))
         {
             m_GameManager.StartNextLevel();
@@ -204,24 +240,7 @@ public class GameplayManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (RespanwsLeft > 0)
-            {
-                var inv = Truck.GetComponentInChildren<Inventory>();
-
-                if (Spawn == null) return;
-                
-                inv.ClearInventory();
-                
-                Truck.transform.position = Spawn.position;
-                Truck.transform.rotation = Spawn.rotation;
-
-                var rb = Truck.GetComponent<Rigidbody>();
-                
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-                
-                RespanwsLeft--;
-            }
+            ResetPlayer();
         }
         
         if (Input.GetKeyDown(KeyCode.P))

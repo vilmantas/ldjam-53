@@ -27,4 +27,9 @@ public class IntroManager : MonoBehaviour
         Audio.volume = Slider.value;
         Audio.Play();
     }
+
+    public void OnExit()
+    {
+        Application.Quit();
+    }
 }
