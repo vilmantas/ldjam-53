@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,20 @@ public class Driving : MonoBehaviour
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public float boost = 1;
+
+    public AudioSource StartAudio;
+
+    public AudioSource IdleAudio;
+    
+    public AudioSource CrashAudio;
     // finds the corresponding visual wheel
     // correctly applies the transform
+
+    private void Start()
+    {
+        IdleAudio.PlayDelayed(StartAudio.clip.length - 0.5f);
+    }
+
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
         if (collider.transform.childCount == 0)
@@ -25,6 +38,11 @@ public class Driving : MonoBehaviour
 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        CrashAudio.Play();
     }
 
     public void FixedUpdate()
