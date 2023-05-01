@@ -57,9 +57,12 @@ public class GameplayManager : MonoBehaviour
     public float BombaRateFrom;
     
     public float BombaRateTo;
+
+    public GameManager m_GameManager;
     
     void Awake()
     {
+        m_GameManager = FindFirstObjectByType<GameManager>();
         var bombaConfigs = FindObjectsOfType<BombaConfiguration>();
 
         foreach (var bomba in bombaConfigs.ToList())
@@ -175,7 +178,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (IsLevelCompleted && Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            GameObject.FindFirstObjectByType<GameManager>().StartNextLevel();
+            m_GameManager.StartNextLevel();
         }
 
         if (InGracePeriod)
@@ -183,7 +186,14 @@ public class GameplayManager : MonoBehaviour
             CheckIfGameOver();
         } 
         
-        if (IsLevelCompleted) return;
+        if (IsLevelCompleted || IsGameOver)
+        { 
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                m_GameManager.RestartLevel();
+            }
+            return;
+        }
 
         if (Input.GetKeyDown(KeyCode.R))
         {

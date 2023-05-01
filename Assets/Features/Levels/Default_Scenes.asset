@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Default_Scenes
   m_EditorClassIdentifier: 
   Scenes:
-  - Gameplay
-  - Lighting
-  - UI
+  - _Gameplay
+  - _Lighting
+  - _UI

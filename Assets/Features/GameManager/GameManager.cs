@@ -67,4 +67,9 @@ public class GameManager : MonoBehaviour
 
         StartGame(Configuration.Levels.Levels[++CurrentLevelIndex]);
     }
+
+    public void RestartLevel()
+    {
+        StartGame(Configuration.Levels.Levels[CurrentLevelIndex]);
+    }
 }
