@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class ItemDropOff : MonoBehaviour
-{
+{ 
     public ItemPickup.ItemType NeededItem;
 
     public int Available;
