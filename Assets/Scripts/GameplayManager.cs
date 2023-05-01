@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using Features.Camera;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -300,6 +301,12 @@ public class GameplayManager : MonoBehaviour
     private void OnDropOffAction(ItemPickup.ItemType type)
     {
         var amount = 1000;
+        
+        if (ActiveDropOff == null)
+        {
+            inv.Pickup(type);
+            return;
+        }
         
         ActiveDropOff.ReceiveResource(amount);
     }

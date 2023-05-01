@@ -72,7 +72,7 @@ public class Inventory : MonoBehaviour
         StartCoroutine(DelayedAction(delay, () => Pickup(type)));
     }
 
-    private void Pickup(ItemType type)
+    public void Pickup(ItemType type)
     {
         if (TryAddItem(type))
         {
