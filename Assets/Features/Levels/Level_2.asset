@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d17f3b9a5457c428332f37bd19b751, type: 3}
   m_Name: Level_2
   m_EditorClassIdentifier: 
-  LevelName: Level_1
+  LevelName: Level_2
   RespawnsAllowed: 0
   TimeToSurviveMinutes: 5
   LoseGracePeriod: 2.74
@@ -20,4 +20,5 @@ MonoBehaviour:
   - ItemType: 1
     LoadDuration: 1
     OffloadDuration: 2
+  LightingScene: _Lighting
   AdditionalScenes: {fileID: 11400000, guid: 340ebd4227f251f4a8bb05db7c5459df, type: 2}
