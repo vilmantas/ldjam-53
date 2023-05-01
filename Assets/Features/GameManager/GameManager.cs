@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
         var additionalScenes = config.AdditionalScenes.Scenes;
         
-        LoadingManager.Instance.LoadScenes(new List<string>() { level }.Concat(additionalScenes), "Lighting");
+        LoadingManager.Instance.LoadScenes(new List<string>() { level, config.LightingScene }.Concat(additionalScenes), config.LightingScene);
     }
 
     public void Update()

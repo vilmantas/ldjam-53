@@ -17,6 +17,8 @@ public class LevelConfiguration_SO : ScriptableObject
     public float LoseGracePeriod;
 
     public List<ItemLoadDurations> ItemDurations;
+
+    public string LightingScene = "_Lighting";
     
     public SceneList_SO AdditionalScenes;
 }
