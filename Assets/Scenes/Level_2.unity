@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16249694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b4ad9eccb149cef4daa6ce7493288b13, type: 3}
+  m_PrefabInstance: {fileID: 1899433704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &23321091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 501817611332849753, guid: 71329ddd61466144aaecbfeb6065cfc9, type: 3}
@@ -1864,6 +1869,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0432016b9965a41a86ea3d5ff55ca5, type: 3}
+--- !u!1 &367419441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 13fc8ee321c4e3b4581d187dbe7caf6b, type: 3}
+  m_PrefabInstance: {fileID: 1764972106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &433894417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2205,6 +2215,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1787643, y: 1.3516426, z: 1.9800415}
   m_Center: {x: -0.04046631, y: 0.1758213, z: -0.076812744}
+--- !u!1 &469906002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b4ad9eccb149cef4daa6ce7493288b13, type: 3}
+  m_PrefabInstance: {fileID: 484693792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &484693792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2278,6 +2293,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4ad9eccb149cef4daa6ce7493288b13, type: 3}
+--- !u!1 &487123020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b4ad9eccb149cef4daa6ce7493288b13, type: 3}
+  m_PrefabInstance: {fileID: 2073132742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &495110642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1d0459cb0982e94c857164eaa54cd72, type: 3}
@@ -2577,6 +2597,11 @@ Transform:
   m_Father: {fileID: 645902323}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 328.674, z: 0}
+--- !u!1 &592463973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 13fc8ee321c4e3b4581d187dbe7caf6b, type: 3}
+  m_PrefabInstance: {fileID: 1525086715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &596245920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3903,6 +3928,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8805136613853267511, guid: 3836d9a1d9590a14a9a0cc362c7d6d12, type: 3}
   m_PrefabInstance: {fileID: 975227937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &977481227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 13fc8ee321c4e3b4581d187dbe7caf6b, type: 3}
+  m_PrefabInstance: {fileID: 1573594497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1006336839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4413,6 +4443,62 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d0459cb0982e94c857164eaa54cd72, type: 3}
+--- !u!1 &1177322276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177322278}
+  - component: {fileID: 1177322279}
+  m_Layer: 0
+  m_Name: BridgeDestroyer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1177322278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177322276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177322279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177322276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78bc459d07ff67a41a1cec4972b48c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ammount: 2
+  TimeDelayInS: 180
+  Bridges:
+  - GoodBridge: {fileID: 469906002}
+    BrokenBridge: {fileID: 977481227}
+    Destroyed: 0
+  - GoodBridge: {fileID: 487123020}
+    BrokenBridge: {fileID: 592463973}
+    Destroyed: 0
+  - GoodBridge: {fileID: 16249694}
+    BrokenBridge: {fileID: 367419441}
+    Destroyed: 0
 --- !u!1001 &1196781745
 PrefabInstance:
   m_ObjectHideFlags: 0
