@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelName: Level_1
   RespawnsAllowed: 1000
-  TimeToSurviveMinutes: 3
+  TimeToSurviveMinutes: 2
   LoseGracePeriod: 15
   ItemDurations:
   - ItemType: 1
