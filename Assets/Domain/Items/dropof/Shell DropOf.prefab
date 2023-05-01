@@ -52,7 +52,7 @@ Transform:
   - {fileID: 2381774653545098535}
   - {fileID: 6825312887402201734}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 214.665, z: 0}
 --- !u!1 &3805512436265261934
 GameObject:
@@ -121,16 +121,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NeededItem: 3
-  Available: 7000
-  Max: 8000
-  RateFromSeconds: 30
+  Available: 4000
+  Max: 4000
+  RateFromSeconds: 40
   RateToSeconds: 60
-  SuccessRate: 0.5
+  SuccessRate: 0.3
   HighUsageChance: 0.3
-  LowMin: 1000
-  LowMax: 2000
-  HighMin: 2000
-  HighMax: 3000
+  LowMin: 800
+  LowMax: 1000
+  HighMin: 1200
+  HighMax: 1800
   ResourceExpenseRateMin: 1
   ResourceExpenseRateMax: 2
 --- !u!1 &5105183103705533948

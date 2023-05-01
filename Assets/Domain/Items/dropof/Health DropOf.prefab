@@ -135,16 +135,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NeededItem: 2
-  Available: 7000
-  Max: 8000
+  Available: 4000
+  Max: 4000
   RateFromSeconds: 30
   RateToSeconds: 60
-  SuccessRate: 0.8
-  HighUsageChance: 0.3
-  LowMin: 1000
-  LowMax: 2000
-  HighMin: 2000
-  HighMax: 3000
+  SuccessRate: 0.3
+  HighUsageChance: 0.4
+  LowMin: 500
+  LowMax: 1000
+  HighMin: 1000
+  HighMax: 1500
   ResourceExpenseRateMin: 1
   ResourceExpenseRateMax: 2
 --- !u!1 &8597743393191766079

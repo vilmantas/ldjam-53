@@ -36,7 +36,7 @@ public class ItemDropOff : MonoBehaviour
     public int ResourceExpenseRateMin;
 
     public int ResourceExpenseRateMax;
-    
+    private bool _firstRun = true;
     private void Start()
     {
         StartCoroutine(BurstFire());
@@ -52,7 +52,15 @@ public class ItemDropOff : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(RateFromSeconds, RateToSeconds));
+            if (!_firstRun)
+            {
+                yield return new WaitForSeconds(Random.Range(RateFromSeconds, RateToSeconds));
+            }
+            else
+            {
+                yield return new WaitForSeconds(3);//eh
+            }
+            _firstRun = false;
 
             if (Random.value >= 1-SuccessRate)
             {
@@ -62,7 +70,7 @@ public class ItemDropOff : MonoBehaviour
                     for (var i = 0; i < amount; i++)
                     {
                         ExpendResource(Random.Range(ResourceExpenseRateMin, ResourceExpenseRateMax));
-                        yield return new WaitForSeconds(Random.Range(0.01f, 0.05f));
+                        yield return new WaitForSeconds(Random.Range(0.002f, 0.008f));
                     }
                 }
                 else
@@ -71,7 +79,7 @@ public class ItemDropOff : MonoBehaviour
                     for (var i = 0; i < amount; i++)
                     {
                         ExpendResource(Random.Range(ResourceExpenseRateMin, ResourceExpenseRateMax));
-                        yield return new WaitForSeconds(Random.Range(0.01f, 0.05f));
+                        yield return new WaitForSeconds(Random.Range(0.002f, 0.008f));
                     }
                 }
             }    

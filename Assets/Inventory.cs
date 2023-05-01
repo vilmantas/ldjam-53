@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
 
     ItemPickup.ItemType? _inRangePickupType;
     ItemPickup.ItemType? _inRangeDropOffType;
-    ItemType?[] _inventory = new ItemType?[4];
+    ItemType?[] _inventory; //= new ItemType?[4];
 
     public Transform[] InvenotrySlots = new Transform[4];
     public List<InventoryItem> InvenotryItemMap = new List<InventoryItem>();
@@ -37,7 +37,10 @@ public class Inventory : MonoBehaviour
 
     public bool DoingAction;
 
-
+    private void Start()
+    {
+        _inventory = new ItemType?[InvenotrySlots.Count()];
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -47,11 +50,11 @@ public class Inventory : MonoBehaviour
     }
 
     private bool HasItem(ItemType type) => _inventory.Any(x => x == type);
-    
+
     public void DoDropOff(ItemType type, float delay)
     {
         if (!HasItem(type)) return;
-        
+
         StartCoroutine(DelayedAction(delay, () => DropOff(type)));
     }
 
@@ -64,11 +67,11 @@ public class Inventory : MonoBehaviour
 
         RefreshDisplay();
     }
-    
+
     public void DoPickup(ItemType type, float delay)
     {
         if (!HasEmptySlot()) return;
-        
+
         StartCoroutine(DelayedAction(delay, () => Pickup(type)));
     }
 
@@ -86,15 +89,15 @@ public class Inventory : MonoBehaviour
         if (DoingAction) yield break;
 
         DoingAction = true;
-        
+
         OnStartAction.Invoke(delay);
-        
+
         yield return new WaitForSeconds(delay);
-        
+
         action.Invoke();
-        
+
         DoingAction = false;
-        
+
         OnStopAction.Invoke();
     }
 
@@ -154,8 +157,8 @@ public class Inventory : MonoBehaviour
         {
             if (_inventory[n] != null)
             {
-               var inventoryItem= InvenotryItemMap.Find(ii => ii.TypeOfItem == _inventory[n]);
-               var itemInstance = Instantiate(inventoryItem.Prefab, InvenotrySlots[n]);
+                var inventoryItem = InvenotryItemMap.Find(ii => ii.TypeOfItem == _inventory[n]);
+                var itemInstance = Instantiate(inventoryItem.Prefab, InvenotrySlots[n]);
                 InvenotryDisplayItems.Add(itemInstance);
             }
         }

@@ -67,18 +67,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NeededItem: 1
-  Available: 7000
-  Max: 8000
-  RateFromSeconds: 10
-  RateToSeconds: 20
-  SuccessRate: 0.8
-  HighUsageChance: 0.3
-  LowMin: 100
-  LowMax: 200
-  HighMin: 200
-  HighMax: 300
+  Available: 4000
+  Max: 4000
+  RateFromSeconds: 20
+  RateToSeconds: 30
+  SuccessRate: 0.5
+  HighUsageChance: 0.2
+  LowMin: 500
+  LowMax: 1000
+  HighMin: 1000
+  HighMax: 2000
   ResourceExpenseRateMin: 1
-  ResourceExpenseRateMax: 2
+  ResourceExpenseRateMax: 1
 --- !u!1 &6982232051110254963
 GameObject:
   m_ObjectHideFlags: 0
