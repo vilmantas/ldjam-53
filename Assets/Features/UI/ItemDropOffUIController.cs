@@ -15,11 +15,11 @@ public class ItemDropOffUIController : MonoBehaviour
 
     public StatusBarDisplayScript StatusBarPrefab;
 
-    public void Initialize(ItemDropOff[] items)
+    public void Initialize(DropOffZone zone)
     {
-        m_items = items;
+        m_items = zone.DropOffs;
         
-        Title.text = items.First().Name;
+        Title.text = zone.Name;
 
         foreach (var itemDrop in m_items)
         {

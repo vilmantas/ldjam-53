@@ -299,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_item: {fileID: 0}
   BarWidth: 0
+  Title: {fileID: 6905818231972637005}
   BarMeter: {fileID: 1547246533053297069}
 --- !u!1 &6912976945687761590
 GameObject:

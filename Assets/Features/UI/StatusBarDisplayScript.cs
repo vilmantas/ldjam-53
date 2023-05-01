@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class StatusBarDisplayScript : MonoBehaviour
@@ -9,6 +10,8 @@ public class StatusBarDisplayScript : MonoBehaviour
     
     [HideInInspector]
     public float BarWidth;
+
+    public TextMeshProUGUI Title;
     
     public RectTransform BarMeter;
 
@@ -16,6 +19,8 @@ public class StatusBarDisplayScript : MonoBehaviour
     {
         m_item = item;
 
+        Title.text = item.NeededItem.ToString();
+        
         BarWidth = BarMeter.rect.width;
         
         m_item.ResourceExpended += OnResourceExpended;

@@ -36,7 +36,7 @@ public class StructureDisplayController : MonoBehaviour
         {
             var z = Instantiate(Prefab, Container);
             
-            z.Initialize(new []{zone} );
+            z.Initialize(zone);
         }
     }
 }

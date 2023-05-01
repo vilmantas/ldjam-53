@@ -18,7 +18,7 @@ public class GameplayManager : MonoBehaviour
 
     public Action OnLeavingZone;
 
-    public List<ItemDropOff> ActiveZones;
+    public List<DropOffZone> ActiveZones;
 
     public ItemDropOff ActiveDropOff;
 
@@ -103,7 +103,7 @@ public class GameplayManager : MonoBehaviour
         
         CameraManager.Instance.ChangeTarget(Truck.gameObject.transform, Truck.gameObject.transform);
 
-        ActiveZones = FindObjectsOfType<ItemDropOff>().ToList();
+        ActiveZones = FindObjectsOfType<DropOffZone>().ToList();
 
         if (Time.timeScale == 0f)
         {
@@ -251,7 +251,7 @@ public class GameplayManager : MonoBehaviour
     
     public void CheckDropOffs()
     {
-        if (ActiveZones.Any(x => x.IsDepleted)) StartGracePeriod();
+        if (ActiveZones.Any(x => x.HasDepletedResource)) StartGracePeriod();
         else StopGracePeriod();
     }
     
