@@ -300,8 +300,6 @@ public class GameplayManager : MonoBehaviour
     private void OnDropOffAction(ItemPickup.ItemType type)
     {
         var amount = 1000;
-
-        if (type == ItemPickup.ItemType.Health) amount = 3;
         
         ActiveDropOff.ReceiveResource(amount);
     }
