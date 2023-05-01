@@ -39,6 +39,6 @@ public class DropOffDisplayController : MonoBehaviour
     private void OnDropOffAvailable()
     {
         DropOffText.enabled = true;
-        DropOffText.text = $"PRESS E TO DROP OFF {p_GameplayManager.ActiveDropOff.NeededItem}";
+        DropOffText.text = $"PRESS E TO DELIVER {p_GameplayManager.ActiveDropOff.NeededItem}";
     }
 }
