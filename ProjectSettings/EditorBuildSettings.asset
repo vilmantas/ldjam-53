@@ -9,26 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: c41b49ddef1d6e74283d16dfcf5cfd23
   - enabled: 1
-    path: Assets/Scenes/Level_1.unity
-    guid: e142b1a9dee698f4fa81cfdb03c1402e
-  - enabled: 1
-    path: Assets/Scenes/_Gameplay.unity
-    guid: f0ec89df022728145afad9efe5696bd6
+    path: Assets/Scenes/Level_2.unity
+    guid: f243e241713032440ad32aafbec75668
   - enabled: 1
     path: Assets/Scenes/_Lighting.unity
     guid: 5e30b3eff2b10f047a312566f77fdb40
   - enabled: 1
+    path: Assets/Scenes/_Gameplay.unity
+    guid: f0ec89df022728145afad9efe5696bd6
+  - enabled: 1
     path: Assets/Scenes/_UI.unity
     guid: fee51ffe498ab6641be47aa60b49aa0d
-  - enabled: 1
-    path: Assets/Features/LoadingScene/Loading.unity
-    guid: fc566fff996ae2e4c99376ad815954e7
-  - enabled: 1
-    path: Assets/Scenes/Level_0.unity
-    guid: 45e097703f84486439927f794fa5f014
-  - enabled: 1
-    path: Assets/Scenes/Vilmanto_Test.unity
-    guid: 7d562937af4d8ce408b31d10eaf96d06
   - enabled: 1
     path: Assets/Scenes/Pause.unity
     guid: a1f9d827d7ed2634f8f2a6e7ebd88f76
@@ -38,10 +29,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: bf462a43990ce1d48af6ec95d3b72a98
+  - enabled: 0
+    path: Assets/Scenes/Level_1.unity
+    guid: 527b6084b2d2cd144af0741f6bed8ba3
   - enabled: 1
+    path: Assets/Features/LoadingScene/Loading.unity
+    guid: fc566fff996ae2e4c99376ad815954e7
+  - enabled: 0
+    path: Assets/Scenes/Level_0.unity
+    guid: 09b76c2a2d3da0c4f8b34826d11239cf
+  - enabled: 0
+    path: Assets/Scenes/Vilmanto_Test.unity
+    guid: 7d562937af4d8ce408b31d10eaf96d06
+  - enabled: 0
     path: Assets/Scenes/_Lighting_Night.unity
     guid: 5e16148ced64b2543aeafd2d310a22e3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level_1.unity
     guid: 527b6084b2d2cd144af0741f6bed8ba3
   m_configObjects: {}
