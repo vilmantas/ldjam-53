@@ -11,13 +11,10 @@ public class Firing : MonoBehaviour
     public float magazineSize = 10;
     public float reloadTime = 3;
     public float bulletSpeed = 5;
-    AudioSource audio;
     public Transform BulletSpawn;
+    public Transform BulletAudioSpawn;
+    public GameObject BulletAudioPrefab;
 
-    void Start()
-    {
-        audio = GetComponent<AudioSource>();
-    }
     private void OnEnable()
     {
         InvokeRepeating("FireMagazine", 0, reloadTime);
@@ -25,17 +22,17 @@ public class Firing : MonoBehaviour
 
     void FireMagazine()
     {
-        audio.Play();
         for (int n = 0; n< magazineSize; n++)
         {
             Invoke("Fire", n* gunSpeed);
         }
-        Invoke("stopSound", magazineSize * gunSpeed);
     }
 
     // Update is called once per frame
     void Fire()
     {
+        var audioInstance = Instantiate(BulletAudioPrefab, BulletAudioSpawn);
+        Destroy(audioInstance, 1);
         var instance = Instantiate(bullet);
         instance.transform.position = BulletSpawn.position;
         var body = instance.GetComponent<Rigidbody>();
@@ -46,9 +43,5 @@ public class Firing : MonoBehaviour
 
         body.velocity =  (target - transform.position)* bulletSpeed;
         Destroy(instance, 3);
-    }
-    void stopSound()
-    {
-        audio.Stop();
     }
 }
