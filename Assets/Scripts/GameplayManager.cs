@@ -212,6 +212,13 @@ public class GameplayManager : MonoBehaviour
     
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Intro");
+
+            return;
+        }
+        
         if (IsLevelCompleted && Input.GetKeyDown(KeyCode.Return))
         {
             m_GameManager.StartNextLevel();
