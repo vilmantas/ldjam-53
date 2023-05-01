@@ -241,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 5928492416533204437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.33, y: 3.07, z: -5.89}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1.389}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2508408124064287441}
@@ -285,7 +285,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5928492416533204437}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6ac8e2098bbdd6d4aa799c17800412f0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -297,8 +297,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.4752162, y: 1.1829627, z: 4.765546}
-  m_Center: {x: 0.0071303896, y: -0.7602929, z: 0.15287401}
+  m_Size: {x: 2.4752162, y: 1.1829627, z: 4.7520037}
+  m_Center: {x: 0.007130395, y: -0.7602929, z: 0.22103299}
 --- !u!114 &8665954105640037031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +320,10 @@ MonoBehaviour:
     rightWheel: {fileID: 7148428229124659517}
     motor: 1
     steering: 1
+  - leftWheel: {fileID: 5825130398000130563}
+    rightWheel: {fileID: 640205420751804369}
+    motor: 1
+    steering: 0
   maxMotorTorque: 500
   maxSteeringAngle: 30
   boost: 10
@@ -338,7 +342,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 926db2855360b984d965aeadd26cc8df, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.176
+  m_Volume: 0.416
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -434,7 +438,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fcb8d27b4b316aa4a9d2c536e58890ce, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.176
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -724,9 +728,15 @@ MonoBehaviour:
   - {fileID: 4378431643931593391}
   - {fileID: 6613785364404371908}
   - {fileID: 7085366445377873041}
+  - {fileID: 1844365153480607755}
+  - {fileID: 4260202348502878548}
   InvenotryItemMap:
   - TypeOfItem: 1
     Prefab: {fileID: 3827843180607015401, guid: 3185a056000d7de4b9bfdef88a72c07e, type: 3}
+  - TypeOfItem: 3
+    Prefab: {fileID: 8961296973029467878, guid: e1a4a1bd24e652d4385a437bd11900bc, type: 3}
+  - TypeOfItem: 2
+    Prefab: {fileID: 7852214549145452049, guid: 2887b1906abd9ea4d8155dbbda186b70, type: 3}
   PickUpSound: {fileID: 3086541424659011658}
   DropOffSound: {fileID: 8175117277434397623}
   DoingAction: 0
@@ -1175,6 +1185,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3882424770627894734, guid: a6c4235d44a3f59498bb5af459d3502d, type: 3}
   m_PrefabInstance: {fileID: 4522061686186972983}
   m_PrefabAsset: {fileID: 0}
+--- !u!146 &5825130398000130563 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 7932688455076986164, guid: a6c4235d44a3f59498bb5af459d3502d, type: 3}
+  m_PrefabInstance: {fileID: 4522061686186972983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4689837954821288628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1410,6 +1425,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6c4235d44a3f59498bb5af459d3502d, type: 3}
+--- !u!146 &640205420751804369 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 7932688455076986164, guid: a6c4235d44a3f59498bb5af459d3502d, type: 3}
+  m_PrefabInstance: {fileID: 7418806750176111333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5986904226317965099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3882424770627894734, guid: a6c4235d44a3f59498bb5af459d3502d, type: 3}
