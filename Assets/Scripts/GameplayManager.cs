@@ -176,7 +176,7 @@ public class GameplayManager : MonoBehaviour
 
     private void Update()
     {
-        if (IsLevelCompleted && Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (IsLevelCompleted && Input.GetKeyDown(KeyCode.Return))
         {
             m_GameManager.StartNextLevel();
         }
@@ -245,7 +245,7 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 0f;
         IsGameOver = true;
         SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("UI");
+        SceneManager.UnloadSceneAsync("_UI");
         OnLevelDone?.Invoke();
     }
     
@@ -278,7 +278,7 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 0f;
         IsLevelCompleted = true;
         SceneManager.LoadScene("Victory", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("UI");
+        SceneManager.UnloadSceneAsync("_UI");
         OnLevelDone?.Invoke();
     }
 
