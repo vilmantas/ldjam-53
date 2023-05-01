@@ -1,57 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
 public class ItemDropOffUIController : MonoBehaviour
 {
+    [HideInInspector]
     public TextMeshProUGUI Title;
-    
-    public TextMeshProUGUI Resource;
-    
-    public TextMeshProUGUI Left;
-    
-    public TextMeshProUGUI Max;
 
-    public ItemDropOff m_item;
+    [HideInInspector]
+    public ItemDropOff[] m_items;
 
-    public RectTransform BarMeter;
+    public StatusBarDisplayScript StatusBarPrefab;
 
-    public float BarWidth;
-
-    public void Initialize(ItemDropOff item)
+    public void Initialize(ItemDropOff[] items)
     {
-        m_item = item;
+        m_items = items;
         
-        Title.text = item.Name;
+        Title.text = items.First().Name;
 
-        Resource.text = item.NeededItem.ToString();
-
-        Left.text = item.Available.ToString();
-
-        Max.text = item.Max.ToString();
-        
-        item.ResourceExpended += OnResourceExpended;
-
-        BarWidth = BarMeter.rect.width;
-        
-        SetBarWidth();
-    }
-
-    private void OnResourceExpended()
-    {
-        Left.text = m_item.Available.ToString();
-        
-        SetBarWidth();
-    }
-
-    private void SetBarWidth()
-    {
-        float percentLeft = (float)m_item.Available / m_item.Max;
-
-        var expectedSize = Mathf.Lerp(0, BarWidth, percentLeft );
-
-        BarMeter.offsetMax = new Vector2(expectedSize - BarWidth, 0);
+        foreach (var itemDrop in m_items)
+        {
+            var ins = Instantiate(StatusBarPrefab, transform);
+            
+            ins.Initialize(itemDrop);
+        }
     }
 }
