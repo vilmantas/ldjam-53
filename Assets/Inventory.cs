@@ -22,6 +22,10 @@ public class Inventory : MonoBehaviour
     public List<InventoryItem> InvenotryItemMap = new List<InventoryItem>();
     private List<GameObject> InvenotryDisplayItems = new List<GameObject>();
 
+    public AudioSource PickUpSound;
+
+    public AudioSource DropOffSound;
+    
     public Action OnZoneLeft;
 
     public Action<ItemPickup> OnInRangeOfPickup;
@@ -62,6 +66,7 @@ public class Inventory : MonoBehaviour
     {
         if (TryTakeItemOut(type))
         {
+            DropOffSound.Play();
             OnDropOffAction.Invoke(type);
         }
 
@@ -79,6 +84,7 @@ public class Inventory : MonoBehaviour
     {
         if (TryAddItem(type))
         {
+            PickUpSound.Play();
             OnPickupAction.Invoke(type);
         }
         RefreshDisplay();
