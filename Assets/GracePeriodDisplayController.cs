@@ -7,6 +7,8 @@ using UnityEngine;
 public class GracePeriodDisplayController : MonoBehaviour
 {
     public TextMeshProUGUI TimeLeft;
+
+    public RectTransform Container;
     
     public GameplayManager p_GameplayManager;
     
@@ -41,9 +43,13 @@ public class GracePeriodDisplayController : MonoBehaviour
             var timeLeft = TimeSpan.FromSeconds(left);
 
             TimeLeft.text = timeLeft.ToString(@"mm\:ss");    
+            
+            Container.gameObject.SetActive(true);
         }
         else
         {
+            Container.gameObject.SetActive(false);
+            
             TimeLeft.text = "";
         }
     }
