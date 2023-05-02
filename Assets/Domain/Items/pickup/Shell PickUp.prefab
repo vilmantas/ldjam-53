@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 260151002570512338}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Shell PickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5107702146104939717}
   - component: {fileID: 1098798285114818033}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,8 +685,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.079916, y: 1, z: 4.169265}
-  m_Center: {x: 0.3977787, y: 0, z: 0.1418946}
+  m_Size: {x: 3.079916, y: 1.7842362, z: 4.169265}
+  m_Center: {x: 0.3977787, y: 0.3921177, z: 0.14189465}
 --- !u!1 &9024169833828047455
 GameObject:
   m_ObjectHideFlags: 0
