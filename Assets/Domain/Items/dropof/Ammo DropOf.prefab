@@ -73,10 +73,10 @@ MonoBehaviour:
   RateToSeconds: 30
   SuccessRate: 0.5
   HighUsageChance: 0.2
-  LowMin: 400
-  LowMax: 900
-  HighMin: 900
-  HighMax: 1800
+  LowMin: 300
+  LowMax: 800
+  HighMin: 800
+  HighMax: 1200
   ResourceExpenseRateMin: 1
   ResourceExpenseRateMax: 1
 --- !u!1 &6982232051110254963
