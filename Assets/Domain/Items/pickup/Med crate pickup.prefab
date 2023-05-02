@@ -83,8 +83,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.43333, y: 3.0898113, z: 5.5116334}
-  m_Center: {x: -0.89235073, y: 1.0449085, z: 0.21280646}
+  m_Size: {x: 6.093059, y: 3.0898113, z: 5.5116334}
+  m_Center: {x: -1.2222168, y: 1.0449085, z: 0.21280642}
 --- !u!114 &6441174320254937513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5091697485619546682}
+  m_Father: {fileID: 4693857606012710354}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2558022844282684799
@@ -189,22 +189,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6839028946715315778}
+  - {fileID: 5265132777513951200}
   - {fileID: 7797870059220303027}
   - {fileID: 1988202279645670560}
   - {fileID: 6149712639690301970}
-  - {fileID: 5091697485619546682}
+  - {fileID: 4693857606012710354}
   - {fileID: 5259554739932741514}
   - {fileID: 6334425130027616522}
-  - {fileID: 5318514634980425972}
+  - {fileID: 5640074210773886744}
   - {fileID: 5129492580357786527}
   - {fileID: 1250715048611355561}
-  - {fileID: 3648978383655934319}
+  - {fileID: 3830733681590894213}
   - {fileID: 6305478601997098608}
   - {fileID: 1550111131853652257}
   - {fileID: 5812836014906547100}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &717157904090452741
 BoxCollider:
@@ -317,7 +317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5318514634980425972}
+  m_Father: {fileID: 5640074210773886744}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5030182547472137724
@@ -379,7 +379,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3648978383655934319}
+  m_Father: {fileID: 3830733681590894213}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6530739670483576189
@@ -410,7 +410,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6839028946715315778}
+  m_Father: {fileID: 5265132777513951200}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7150810814415793734
@@ -774,7 +774,7 @@ PrefabInstance:
       addedObject: {fileID: 1034885031477121363}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfb5402870edcd74ebe8b931bdb69e83, type: 3}
---- !u!4 &3648978383655934319 stripped
+--- !u!4 &3830733681590894213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfb5402870edcd74ebe8b931bdb69e83, type: 3}
   m_PrefabInstance: {fileID: 3648978383655934318}
@@ -912,7 +912,7 @@ PrefabInstance:
       addedObject: {fileID: 33474596293671705}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfb5402870edcd74ebe8b931bdb69e83, type: 3}
---- !u!4 &5091697485619546682 stripped
+--- !u!4 &4693857606012710354 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfb5402870edcd74ebe8b931bdb69e83, type: 3}
   m_PrefabInstance: {fileID: 5091697485619546681}
@@ -981,7 +981,7 @@ PrefabInstance:
       addedObject: {fileID: 4965424185851267866}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfb5402870edcd74ebe8b931bdb69e83, type: 3}
---- !u!4 &5318514634980425972 stripped
+--- !u!4 &5640074210773886744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfb5402870edcd74ebe8b931bdb69e83, type: 3}
   m_PrefabInstance: {fileID: 5318514634980425971}
@@ -1050,7 +1050,7 @@ PrefabInstance:
       addedObject: {fileID: 8062746802688100878}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfb5402870edcd74ebe8b931bdb69e83, type: 3}
---- !u!4 &6839028946715315778 stripped
+--- !u!4 &5265132777513951200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfb5402870edcd74ebe8b931bdb69e83, type: 3}
   m_PrefabInstance: {fileID: 5664185969205671947}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d17f3b9a5457c428332f37bd19b751, type: 3}
   m_Name: Level_1_5
   m_EditorClassIdentifier: 
-  LevelName: Level_2
+  LevelName: Level_1_5
   RespawnsAllowed: 1000
   TimeToSurviveMinutes: 5
   LoseGracePeriod: 15
