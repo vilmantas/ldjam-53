@@ -2487,11 +2487,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4ad9eccb149cef4daa6ce7493288b13, type: 3}
---- !u!1 &487123020 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b4ad9eccb149cef4daa6ce7493288b13, type: 3}
-  m_PrefabInstance: {fileID: 2073132742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &495110642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1d0459cb0982e94c857164eaa54cd72, type: 3}
@@ -2807,11 +2802,6 @@ Transform:
   m_Father: {fileID: 645902323}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 328.674, z: 0}
---- !u!1 &592463973 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 13fc8ee321c4e3b4581d187dbe7caf6b, type: 3}
-  m_PrefabInstance: {fileID: 1525086715}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &596245920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4875,14 +4865,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78bc459d07ff67a41a1cec4972b48c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ammount: 2
+  Ammount: 1
   TimeDelayInS: 180
   Bridges:
   - GoodBridge: {fileID: 469906002}
     BrokenBridge: {fileID: 977481227}
-    Destroyed: 0
-  - GoodBridge: {fileID: 487123020}
-    BrokenBridge: {fileID: 592463973}
     Destroyed: 0
   - GoodBridge: {fileID: 16249694}
     BrokenBridge: {fileID: 367419441}
