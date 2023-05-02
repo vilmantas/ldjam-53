@@ -14,6 +14,7 @@ public class IntroManager : MonoBehaviour
     void Start()
     {
         manager = GameObject.Find("game_manager").GetComponent<GameManager>();
+        Audio.Play();
     }
 
     public void OnStartClicked()
@@ -25,7 +26,7 @@ public class IntroManager : MonoBehaviour
     {
         manager.Volume = Slider.value;
         Audio.volume = Slider.value;
-        Audio.Play();
+      //  Audio.Play();
     }
 
     public void OnExit()
