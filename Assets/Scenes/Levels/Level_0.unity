@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2085,8 +2085,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.0708065, y: 8.775201, z: 24.141912}
-  m_Center: {x: 0.8115109, y: -1.5350995, z: -1.2952108}
+  m_Size: {x: 11.0708065, y: 8.775201, z: 12.6479645}
+  m_Center: {x: 0.8115108, y: -1.5350996, z: -3.3134677}
 --- !u!1 &571131673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 31501ccf42a2a5e45a82bd70b7cc82d4, type: 3}
@@ -2116,8 +2116,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.0708065, y: 8.775201, z: 24.141912}
-  m_Center: {x: 0.8115109, y: -1.5350995, z: -1.2952108}
+  m_Size: {x: 11.0708065, y: 8.775201, z: 12.6479645}
+  m_Center: {x: 0.8115108, y: -1.5350996, z: -3.3134677}
 --- !u!1 &574970822
 GameObject:
   m_ObjectHideFlags: 0
@@ -6188,8 +6188,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.0708065, y: 8.775201, z: 24.141912}
-  m_Center: {x: 0.8115109, y: -1.5350995, z: -1.2952108}
+  m_Size: {x: 11.0708065, y: 8.775201, z: 12.6479645}
+  m_Center: {x: 0.8115108, y: -1.5350996, z: -3.3134677}
 --- !u!1001 &1811835839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7143,8 +7143,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.0708065, y: 8.775201, z: 24.141912}
-  m_Center: {x: 0.8115109, y: -1.5350995, z: -1.2952108}
+  m_Size: {x: 11.0708065, y: 8.775201, z: 12.6479645}
+  m_Center: {x: 0.8115108, y: -1.5350996, z: -3.3134677}
 --- !u!4 &2109873797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 501817611332849753, guid: 71329ddd61466144aaecbfeb6065cfc9, type: 3}
